@@ -1,0 +1,51 @@
+[
+    {
+      "id": 1,
+      "fullname": "admin",
+      "email": "admin@gmail.com",
+      "password" : "admin",
+      "userType" : "Admin"
+    },
+    {
+      "id": 2,
+      "fullname": "meriem",
+      "email": "meriem@gmail.com",
+      "password" : "meriem",
+      "userType" : "Customer"
+  
+  
+    }
+  ,{
+    "id": 3,
+    "fullname": "manel",
+    "email": "manel@gmail.com",
+    "password" : "manel",
+    "userType" : "Customer"
+  
+  }
+  ,{
+    "id": 4,
+    "fullname": "raghad",
+    "email": "raghad@gmail.com",
+    "password" : "raghad",
+    "userType" : "Customer"
+  
+  }
+  ,{
+    "id": 5,
+    "fullname": "islam",
+    "email": "islam@gmail.com",
+    "password" : "islam",
+    "userType" : "Customer"
+  
+  },
+    {
+      "id": 6,
+      "fullname": "Enjoud",
+      "email": "enjoud@gmail.com",
+      "password" : "enjoud",
+      "userType" : "Customer"
+  
+    }
+  ]
+  
