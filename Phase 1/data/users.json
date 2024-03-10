@@ -1,50 +1,50 @@
 [
     {
       "id": 1,
-      "fullname": "admin",
+      "username": "admin",
       "email": "admin@gmail.com",
       "password" : "admin",
       "userType" : "Admin"
     },
     {
       "id": 2,
-      "fullname": "meriem",
-      "email": "meriem@gmail.com",
-      "password" : "meriem",
+      "username": "islam",
+      "email": "islam@gmail.com",
+      "password" : "islam01",
       "userType" : "Customer"
   
   
     }
   ,{
     "id": 3,
-    "fullname": "manel",
-    "email": "manel@gmail.com",
-    "password" : "manel",
+    "username": "Najlaa",
+    "email": "najlaa@gmail.com",
+    "password" : "najlaa03",
     "userType" : "Customer"
   
   }
   ,{
     "id": 4,
-    "fullname": "raghad",
-    "email": "raghad@gmail.com",
-    "password" : "raghad",
+    "username": "rain",
+    "email": "rain@gmail.com",
+    "password" : "rain01",
     "userType" : "Customer"
   
   }
   ,{
     "id": 5,
-    "fullname": "islam",
-    "email": "islam@gmail.com",
-    "password" : "islam",
-    "userType" : "Customer"
+    "username": "Fatma",
+    "email": "fatma@gmail.com",
+    "password" : "fatma123",
+    "userType" : "Seller"
   
   },
     {
       "id": 6,
-      "fullname": "Enjoud",
-      "email": "enjoud@gmail.com",
-      "password" : "enjoud",
-      "userType" : "Customer"
+      "username": "Mariam",
+      "email": "mariam@gmail.com",
+      "password" : "mariam321",
+      "userType" : "Seller"
   
     }
   ]
