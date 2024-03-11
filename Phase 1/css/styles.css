@@ -1,13 +1,22 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    /* font-family: Arial, sans-serif; */
+    font-family: Poppins;
+    /* font-family: "Nanum Gothic Coding", monospace; */
     background-color: #0B132B; /* Dark background color */
     color: #C5C6C7; /* Light text color */
     background-image: url('cover\ bg.jpeg'); /* Add your image path here */
     background-size: cover; /* Cover the entire background */
     background-position: center; /* Center the background */
 }
+
+.nanum-gothic coding-regular {
+    font-family: "Nanum Gothic Coding", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+
 
 .container {
     width: 90%;
@@ -25,7 +34,7 @@ header {
     position: fixed; /* Make the header fixed */
     width: 100%; /* Ensure the header spans the entire width */
     top: 0; /* Position the header at the top of the viewport */
-    z-index: 1000; /* Ensure the header stays on top of other elements */
+    /* z-index: 1000; Ensure the header stays on top of other elements */
 }
 
 .logo {
@@ -132,6 +141,21 @@ footer {
     color: #6FFFE9; /* Light blue color from your palette */
 }
 
+.languages ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.languages ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.languages ul li:last-child {
+    margin-right: 0;
+}
+
 .region select {
     padding: 8px;
     border: none;
@@ -160,16 +184,14 @@ footer {
     margin-right: 20px;
 }
 
-.footer-links a {
-    color: #C5C6C7;
-    text-decoration: none;
-}
-
 .footer-links a:hover {
     text-decoration: underline;
 }
 
-.social-media a {
+.social-media a,
+.footer-links a {
+    color: #C5C6C7;
+    text-decoration: none;
     margin-left: 10px;
 }
 
@@ -185,8 +207,12 @@ main {
 }
 
 .contact-us {
-    margin-top: 20px;
+    margin-top: 100px; /* Adjust the margin-top value to create space below the header */
+    padding: 20px;
+    background-color: #1C2541;
+    color: #C5C6C7;
 }
+
 
 .contact-us h2 {
     color: #6FFFE9;
@@ -229,3 +255,44 @@ main {
 .contact-us form button[type="submit"]:hover {
     background-color: #6FFFE9;
 }
+/* .products {
+    padding: 20px;
+    background-color: #1C2541;
+    color: #C5C6C7;
+}
+
+.products h2 {
+    text-align: center;
+}
+
+.product-card {
+    background-color: #3A506B;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+.product-card h3 {
+    margin-top: 10px;
+}
+
+.product-card p {
+    margin-top: 10px;
+}
+
+.read-more {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #6FFFE9;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+} */
