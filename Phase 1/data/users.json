@@ -11,25 +11,27 @@
       "username": "islam",
       "email": "islam@gmail.com",
       "password" : "islam01",
-      "userType" : "Customer"
-  
-  
+      "userType" : "Customer",
+      "balance" : "1000"
     }
+
   ,{
     "id": 3,
     "username": "Najlaa",
     "email": "najlaa@gmail.com",
     "password" : "najlaa03",
-    "userType" : "Customer"
-  
+    "userType" : "Customer",
+    "balance" : "2000"
+
   }
   ,{
     "id": 4,
     "username": "rain",
     "email": "rain@gmail.com",
     "password" : "rain01",
-    "userType" : "Customer"
-  
+    "userType" : "Customer",
+    "balance" : "1000"
+
   }
   ,{
     "id": 5,
