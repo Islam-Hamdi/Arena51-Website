@@ -4,11 +4,13 @@ body {
     /* font-family: Arial, sans-serif; */
     font-family: Poppins;
     /* font-family: "Nanum Gothic Coding", monospace; */
-    background-color: #0B132B; /* Dark background color */
-    color: #C5C6C7; /* Light text color */
-    background-image: url('cover\ bg.jpeg'); /* Add your image path here */
-    background-size: cover; /* Cover the entire background */
-    background-position: center; /* Center the background */
+    background-color: #0B132B; 
+    color: #C5C6C7; 
+    background-image: url('bg2.jpg'); 
+    /* background-size: cover;  */
+    background-repeat: no-repeat; 
+    /* background-size: 100% 100%;  */
+    background-position: center; 
 }
 
 .nanum-gothic coding-regular {
@@ -28,13 +30,13 @@ body {
 }
 
 header {
-    background-color: #0B132B; /* Dark color from your palette */
-    color: #C5C6C7; /* Light text color */
-    padding: 10px 0; /* Adjust padding as needed */
-    position: fixed; /* Make the header fixed */
-    width: 100%; /* Ensure the header spans the entire width */
+    background-color: hsl(162, 58%, 0%); 
+    color: #C5C6C7; 
+    /* padding: 10px 0;  */
+    /* position: fixed; */
+    width: 100%; 
     top: 0; /* Position the header at the top of the viewport */
-    /* z-index: 1000; Ensure the header stays on top of other elements */
+
 }
 
 .logo {
@@ -53,9 +55,17 @@ header {
     margin: 0;
     font-family: Poppins;
     /* font-family: 'Namum Gothic Coding'; */
-    font-size: 24px;
+    font-size: 35px;
     color: #FFFFFF; /* Title color set to white */
     margin-left: 10px; /* Adjust the margin to bring it closer to the logo */
+    .arena {
+        color: #FFFFFF; /* Color for "Arena" */
+    }
+    
+    .number {
+        color: #68C301; /* Color for "51" */
+    }
+    
 }
     
 
@@ -75,12 +85,12 @@ nav ul li:last-child {
 }
 
 nav ul li a {
-    color: #C5C6C7; /* Navigation link color */
+    color: #C5C6C7; 
     text-decoration: none;
 }
 
 nav ul li a:hover {
-    color: #6FFFE9; /* Navigation link color on hover */
+    color: #68C301;
 }
 
 .search input[type="text"] {
@@ -88,21 +98,21 @@ nav ul li a:hover {
     border: none;
     border-radius: 4px;
     margin-right: 10px;
-    background-color: #3A506B; /* Search input background color */
-    color: #C5C6C7; /* Search input text color */
+    background-color: rgb(27, 61, 0); 
+    color: #C5C6C7; 
 }
 
 .search button {
     padding: 8px 16px;
-    background-color: #5BC0BE; /* Search button background color */
+    background-color: rgb(104, 195, 1); 
     border: none;
     border-radius: 4px;
-    color: #1C2541; /* Search button text color */
+    color: black; 
     cursor: pointer;
 }
 
 .search button:hover {
-    background-color: #6FFFE9; /* Search button background color on hover */
+    background-color: #68C301; 
 }
 
 .account a {
@@ -115,17 +125,31 @@ nav ul li a:hover {
 }
 
 footer {
-    background-color: #1C2541;
-    color: #C5C6C7;
-    padding: 20px 0;
-    position: absolute;
-    bottom: 0;
+
+    text-align: center;
+    /* position: fixed; */
+    padding: 1rem;
+    /* padding: 20px 0; */
+    /* position: absolute; */
+    /* bottom: 0; */
     width: 100%;
+    
 }
 
 .footer-nav {
+    background-color: #07090A;
+    color: #C5C6C7;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.top-links {
+    display: flex;
     align-items: center;
 }
 
@@ -138,7 +162,7 @@ footer {
     font-size: 20px; /* Adjust arrow size */
     vertical-align: middle;
     margin-left: 5px;
-    color: #6FFFE9; /* Light blue color from your palette */
+    color: #68C301; /* Light blue color from your palette */
 }
 
 .languages ul {
@@ -160,7 +184,7 @@ footer {
     padding: 8px;
     border: none;
     border-radius: 4px;
-    background-color: #3A506B; /* Darker blue background color */
+    background-color: #1B3D00; /* Darker blue background color */
     color: #C5C6C7;
 }
 
@@ -169,7 +193,7 @@ footer {
 }
 
 .region select option {
-    background-color: #3A506B; /* Darker blue background color */
+    background-color: #1B3D00; /* Darker blue background color */
     color: #C5C6C7;
 }
 
@@ -197,25 +221,31 @@ footer {
 
 .social-media i {
     font-size: 30px; /* Adjust social media icon size */
-    color: #6FFFE9; /* Light blue color from your palette */
+    color: #68C301; /* Light blue color from your palette */
+}
+
+.languages-region {
+    display: flex;
+    align-items: center;
 }
 
 main {
     padding: 20px;
-    background-color: #1C2541;
+    /* background-color: #414a3f; */
     color: #C5C6C7;
 }
 
 .contact-us {
-    margin-top: 100px; /* Adjust the margin-top value to create space below the header */
+    /* width: 80%; */
+    margin-top: 100px; 
     padding: 20px;
-    background-color: #1C2541;
+    background-color: #07090A;
     color: #C5C6C7;
 }
 
 
 .contact-us h2 {
-    color: #6FFFE9;
+    color: #68C301;
 }
 
 .contact-us form {
@@ -237,9 +267,9 @@ main {
 .contact-us form textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #3A506B;
+    border: 1px solid #1B3D00;
     border-radius: 4px;
-    background-color: #3A506B;
+    background-color: #1B3D00;
     color: #C5C6C7;
 }
 
@@ -247,52 +277,95 @@ main {
     padding: 10px 20px;
     border: none;
     border-radius: 4px;
-    background-color: #5BC0BE;
+    background-color: #68C301;
     color: #1C2541;
     cursor: pointer;
 }
 
 .contact-us form button[type="submit"]:hover {
-    background-color: #6FFFE9;
-}
-/* .products {
-    padding: 20px;
-    background-color: #1C2541;
-    color: #C5C6C7;
+    background-color: #68C301;
 }
 
-.products h2 {
-    text-align: center;
+.map-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #07090A;
+    align-items: center;
+    /* padding: 1rem; */
 }
 
-.product-card {
-    background-color: #3A506B;
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 20px;
+.google-map {
+    /* filter: hue-rotate(90deg); */
+    height: 450px; /* Adjust the height as needed */
 }
 
-.product-card img {
+.google-map iframe {
+    width: 80%; /* Adjust the width as needed */
+    max-width: 800px; /* Set a maximum width if necessary */
+    height: 100%; /* Make the iframe fill the container vertically */
+}
+
+.about-us-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.map-container {
+    width: 45%;
+}
+
+.map-container iframe {
     width: 100%;
-    border-radius: 4px;
+    height: 100%;
+    border: 0;
 }
 
-.product-card h3 {
-    margin-top: 10px;
+.team-info {
+    width: 45%;
 }
 
-.product-card p {
-    margin-top: 10px;
-}
-
-.read-more {
-    display: block;
-    margin-top: 10px;
+.team-info h1 {
     text-align: center;
-    color: #6FFFE9;
-    text-decoration: none;
 }
 
-.read-more:hover {
-    text-decoration: underline;
+.team-info p {
+    text-align: justify;
+}
+
+.languages-region {
+    display: flex;
+    align-items: center;
+}
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+    footer {
+        display: flex;
+        flex-direction: column;
+
+    }
+    .languages-region, .top-links {
+    /* display: flex; */
+    width: 100%;
+    justify-content: space-around;
+    text-align: center;
+
+    } 
+
+    /* .footer-links a {
+        display: flex;
+        direction: column;
+        align-items: center;
+    } */
+
+    .social-media {
+        margin-bottom: 10px;
+    }
+}
+
+/* @media (min-width: 768px) {
+    .social-media {
+        margin-right: 20px;
+    }
 } */

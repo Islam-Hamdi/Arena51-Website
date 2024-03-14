@@ -8,7 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/x-icon" href="images/xicon.png">
+    <link rel="icon" type="image/x-icon" href="images/aliens (5).png">
+
 
     <title>Arena 51</title>
 </head>
@@ -16,18 +17,17 @@
     <header>
         <div class="container">
             <div class="logo">
-                <img src="images/aliens.png" alt="Logo">
+                <img src="images/logo.png" alt="Logo">
 
-            <div class="title">
-                <h1>Arena 51</h1>
+                <div class="title">
+                    <h1><span class="arena">Arena</span> <span class="number">51</span></h1>
+                </div>
             </div>
-        </div>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="Arena-51-Website.html">Home</a></li>
                     <li><a href="#categories">Categories</a></li>
-                    <li><a href="#about-us">About Us</a></li>
-                    <li><a href="#contact-us">Contact Us</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
                 </ul>
             </nav>
             <div class="search">
@@ -41,27 +41,25 @@
         </div>
     </header>
 
-
-    <!-- Other content of your website goes here -->
-
     <main>
-        <!-- Main content, including the form -->
-            <section class="products">
-                <h2>Our Products</h2>
-                <div class="product-card">
-                    <img src="images/game1.jpg" alt="Game 1">
-                    <h3>Game 1</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <a href="#" class="read-more">Read More</a>
-                </div>
-                <div class="product-card">
-                    <img src="images/game2.jpg" alt="Game 2">
-                    <h3>Game 2</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <a href="#" class="read-more">Read More</a>
-                </div>
+        <!-- Embedded Google Map -->
+
+        <section class="about-us-container">
+            <section class="team-info">
+                <h1>About Our Team</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus auctor sem a ultrices. Duis vehicula turpis eu turpis vehicula eleifend. Nullam porttitor mauris vitae nulla sodales, non posuere tortor rhoncus.</p>
+                <p>Nunc non lectus id arcu gravida feugiat. Curabitur ut est in lacus efficitur placerat. Integer vel justo non nulla consectetur congue. Nam tempus lacus sed risus congue, ac aliquam risus placerat.</p>
+                <p>Donec varius sem id nisi tempus, at auctor felis cursus. Pellentesque vel erat vel leo ultricies feugiat sed vitae lacus. Aenean congue enim nec scelerisque hendrerit.</p>
+                <p>This project is a part of our web development course where we learned various skills including HTML, CSS, JavaScript, and more.</p>
             </section>
-        
+            <section class="map-container">
+                <h1>Our Headquarter</h1>
+                <iframe id="mapFrame" class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.7690972443297!2d51.485534149219106!3d25.37905403038381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45dd1a7e555553%3A0x61f3df230682dfad!2sCollege%20Of%20Engineering%20(H07)!5e0!3m2!1sen!2sqa!4v1710266163836!5m2!1sen!2sqa" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            </section>
+        </section>
+
+
         <section id="contact-us" class="contact-us">
             <h2>Contact Us</h2>
             <form action="submit_contact_form.php" method="POST">
@@ -80,13 +78,13 @@
                 <button type="submit">Send Message</button>
             </form>
         </section>
-        
-    </main>
 
+
+    </main>
 
     <footer>
         <!-- <div class="container"> -->
-            <div class="footer-nav container">
+            <div class="footer-nav">
                 <a href="#top"><i class="fas fa-arrow-up"></i> Back to Top</a>
                 <div class="social-media">
                     <!-- Social media icons with links -->
@@ -103,10 +101,11 @@
                         <li><a href="#">Support</a></li>
                     </ul>
                 </div>
+                <div class="languages-region">
                 <div class="languages">
                     <ul>
-                        <li><a href="#">English (US)</a></li>
-                        <li><a href="#">العربية</a></li>
+                        <li><a href="#">En (US)</a></li>
+                        <li><a href="#">Ar</a></li>
                     </ul>
                 </div>
                 <div class="region">
@@ -115,12 +114,14 @@
                         <option value="europe">Europe</option>
                         <option value="asia">Asia</option>
                         <option value="south-america">South America</option>
+                        <option value="north-america">North America</option>                       
                         <option value="africa">Africa</option>
                     </select>
                 </div>
             </div>
-        <!-- </div> -->
+            
+        </div>
     </footer>
-    
+
 </body>
 </html>
