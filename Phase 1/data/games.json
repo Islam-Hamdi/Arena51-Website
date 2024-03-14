@@ -1,0 +1,26 @@
+[
+    {
+      "name": "Street Fighter 6",
+      "categories": ["Fighting"],
+      "image": "images/images.jpeg",
+      "description": "Fighting game of the year 2024"
+    },
+    {
+      "name": "Cyberpunk 2077",
+      "categories": ["RPG", "FPS"],
+      "image": "images/i-really-cant-express-how-much-i-absolutely-adore-the-new-v0-i6fbziaqrw1c1.webp",
+      "description": "RPG game of the year 2024"
+    },
+    {
+      "name": "Baulders Gate 3",
+      "categories": ["RPG"],
+      "image": "images/a84d59000deb982ccfacc171da86217a.jpg",
+      "description": "Game of the year 2024"
+    },
+    {
+      "name": "Valorant",
+      "categories": ["FPS"],
+      "image": "images/8ddacbc526e4837d78825628816c36bd.jpg",
+      "description": "5v5 character-based tactical"
+    }
+]

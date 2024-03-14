@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/x-icon" href="images/aliens (5).png">
+    <script src="js/index.js" defer></script>
 
     <title>Arena 51</title>
 </head>
@@ -44,7 +45,31 @@
     <!-- Other content of your website goes here -->
 
     <main>
+        <div class="image-gallery ">
+            <div class="slider">
+                <div class="slide">
+                    <img src="images/slide1.webp" alt="Image 1"> 
+                    <img src="images/slide2.webp" alt="Image 2"> 
+                    <img src="images/slide3.webp" alt="Image 3"> 
+                </div>
+            </div>
+        </div>
+        <div id="arrows"> 
+                <button class="arrows left-arrow">◀</button>
+                <button class="arrows right-arrow"> ▶ </button>
+        </div>
+        <script src="HomeScript.js"></script>
 
+        <div class="categories">
+           
+                <button class="button-64" role="button" data-category="All"><span class="text">All</span></button>
+                <button class="button-64" role="button" data-category="Fighting"><span class="text">Fighting</span></button>
+                <button class="button-64" role="button" data-category="RPG"><span class="text">RPG</span></button>
+                <button class="button-64" role="button" data-category="FPS"><span class="text">FPS</span></button>
+           
+           
+        </div>
+        <div class="games-wrapper"></div>
         
     </main>
 
