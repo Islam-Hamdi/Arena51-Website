@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" type="image/x-icon" href="images/xicon.png">
+    <link rel="icon" type="image/x-icon" href="images/aliens (5).png">
 
     <title>Arena 51</title>
 </head>
@@ -16,18 +16,17 @@
     <header>
         <div class="container">
             <div class="logo">
-                <img src="images/aliens.png" alt="Logo">
+                <img src="images/logo.png" alt="Logo">
 
             <div class="title">
-                <h1>Arena 51</h1>
+                <h1><span class="arena">Arena</span> <span class="number">51</span></h1>
             </div>
         </div>
             <nav>
                 <ul>
-                    <li><a href="#home">Home</a></li>
+                    <li><a href="#Arena-51-Website.html">Home</a></li>
                     <li><a href="#categories">Categories</a></li>
-                    <li><a href="#about-us">About Us</a></li>
-                    <li><a href="#contact-us">Contact Us</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
                 </ul>
             </nav>
             <div class="search">
@@ -45,48 +44,14 @@
     <!-- Other content of your website goes here -->
 
     <main>
-        <!-- Main content, including the form -->
-            <section class="products">
-                <h2>Our Products</h2>
-                <div class="product-card">
-                    <img src="images/game1.jpg" alt="Game 1">
-                    <h3>Game 1</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <a href="#" class="read-more">Read More</a>
-                </div>
-                <div class="product-card">
-                    <img src="images/game2.jpg" alt="Game 2">
-                    <h3>Game 2</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <a href="#" class="read-more">Read More</a>
-                </div>
-            </section>
-        
-        <section id="contact-us" class="contact-us">
-            <h2>Contact Us</h2>
-            <form action="submit_contact_form.php" method="POST">
-                <div>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
+
         
     </main>
 
 
     <footer>
         <!-- <div class="container"> -->
-            <div class="footer-nav container">
+            <div class="footer-nav">
                 <a href="#top"><i class="fas fa-arrow-up"></i> Back to Top</a>
                 <div class="social-media">
                     <!-- Social media icons with links -->
@@ -103,10 +68,11 @@
                         <li><a href="#">Support</a></li>
                     </ul>
                 </div>
+                <div class="languages-region">
                 <div class="languages">
                     <ul>
-                        <li><a href="#">English (US)</a></li>
-                        <li><a href="#">العربية</a></li>
+                        <li><a href="#">En (US)</a></li>
+                        <li><a href="#">Ar</a></li>
                     </ul>
                 </div>
                 <div class="region">
@@ -115,11 +81,13 @@
                         <option value="europe">Europe</option>
                         <option value="asia">Asia</option>
                         <option value="south-america">South America</option>
+                        <option value="north-america">North America</option>                       
                         <option value="africa">Africa</option>
                     </select>
                 </div>
             </div>
-        <!-- </div> -->
+            
+        </div>
     </footer>
     
 </body>
