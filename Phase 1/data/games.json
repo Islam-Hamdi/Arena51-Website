@@ -2,25 +2,49 @@
     {
       "name": "Street Fighter 6",
       "categories": ["Fighting"],
-      "image": "images/images.jpeg",
+      "image": "images/StreetFighter.jpeg",
       "description": "Fighting game of the year 2024"
     },
     {
       "name": "Cyberpunk 2077",
       "categories": ["RPG", "FPS"],
-      "image": "images/i-really-cant-express-how-much-i-absolutely-adore-the-new-v0-i6fbziaqrw1c1.webp",
+      "image": "images/cyberPunk.webp",
       "description": "RPG game of the year 2024"
     },
     {
-      "name": "Baulders Gate 3",
+      "name": "Baldur's Gate 3",
       "categories": ["RPG"],
-      "image": "images/a84d59000deb982ccfacc171da86217a.jpg",
+      "image": "images/Baldur'sGate.jpg",
       "description": "Game of the year 2024"
     },
     {
       "name": "Valorant",
       "categories": ["FPS"],
-      "image": "images/8ddacbc526e4837d78825628816c36bd.jpg",
+      "image": "images/Valorant.jpg",
       "description": "5v5 character-based tactical"
+    },
+    {
+      "name": "Tekken 8",
+      "categories": ["Fighting"],
+      "image": "images/Tekken-8.jpg",
+      "description": "best Sony PlayStation game award"
+    },
+    {
+      "name": "Overwatch 2",
+      "categories": ["FPS"],
+      "image": "images/overwatch-2.jpg",
+      "description": "Winner Webby Award"
+    },
+    {
+      "name": "Starfield",
+      "categories": ["RPG"],
+      "image": "images/starfield.webp",
+      "description": "2023 Winner Golden Joystick Award"
+    },
+    {
+      "name": "Call of Duty: Modern Warfare 2",
+      "categories": ["FPS"],
+      "image": "images/Call-of-Duty-Modern-Warfare-2.webp",
+      "description": "IGN Select Award for Best PC Game"
     }
 ]
