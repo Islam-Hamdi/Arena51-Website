@@ -1,18 +1,20 @@
 [
     {
+        "image": "images/slide3.webp",
+        "text": "Limited time offers on popular games!",
+        "buttonText": "View Deals"
+      },
+      {
+        "image": "images/slide2.webp",
+        "text": "Discover exciting new games!",
+        "buttonText": "Shop Now"
+      },
+    {
       "image": "images/slide1.webp",
       "text": "Explore our latest game offers!",
       "buttonText": "Explore Now"    
-    },
-    {
-      "image": "images/slide2.webp",
-      "text": "Discover exciting new games!",
-      "buttonText": "Shop Now"
-    },
-    {
-      "image": "images/slide3.webp",
-      "text": "Limited time offers on popular games!",
-      "buttonText": "View Deals"
     }
+
+
   ]
   
