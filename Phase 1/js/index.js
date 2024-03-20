@@ -18,6 +18,14 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         })
         .catch((error) => console.error("Error fetching data:", error));
+        const buyNowButtons = document.querySelectorAll(".btn.fill");
+            buyNowButtons.forEach((button) => {
+                button.addEventListener("click", () => {
+                    window.location.href = "purchase.html";
+                });
+            });
+        })
+        .catch((error) => console.error("Error fetching data:", error));
  
     function renderGames(games) {
         gamesWrapper.innerHTML = ""; // Clear previous games
