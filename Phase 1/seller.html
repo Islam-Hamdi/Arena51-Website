@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seller Page</title>
+    <link rel="stylesheet" href="css/seller.css"> <!-- Link to the CSS file -->
+    <link href='https://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+
+                <div class="title">
+                    <h1><span class="arena">Arena</span> <span class="number">51</span></h1>
+                </div>
+            </div>
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="#Arena-51-Website.html">Home</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="contact-us.html">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="account">
+                <i class="fas fa-user"></i>
+                <a href="#">Login / Sign Up</a>
+                <!-- <button class="btnLogin-popup"> Login</button> -->
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <form id="gameForm" action="addgame.php" method="POST">
+            <div class="form-group">
+                <label for="title">Game Title <span></span></label>
+                <input type="text" name="title" id="title" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="caption">Description <span></span></label>
+                <input type="text" name="caption" id="caption" class="form-control" required>
+            </div>
+               
+            <div class="form-group">
+                <label for="price">Price <span></span></label>
+                <input type="number" name="price" id="price" class="form-control" min="0" step="0.01" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="quantity">Quantity <span></span></label>
+                <input type="number" name="quantity" id="quantity" class="form-control" min="0" required>
+            </div>
+            
+            <div class="form-group file-area">
+                <label for="images">Image<span></span></label>
+                <input type="file" name="images" id="images" required="required" multiple="multiple"/>
+                <div class="file-dummy">
+                    <div class="success">Great, your files are selected. Keep on.</div>
+                    <div class="default">Please select some files</div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <button class="btn" type="button" onclick="uploadGame()">Upload Game</button>
+            </div>
+        </form>
+        
+        <div class="preview-container">
+            <img id="image-preview" src="#" alt="Preview">
+        </div>
+    </main>
+
+    <footer>
+        <nav class="footer-nav">
+            <a href="#top"><i class="fas fa-arrow-up"></i> Back to Top</a>
+            <div class="social-media">
+                <!-- Social media icons with links -->
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <!-- Add more social media icons as needed -->
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Internet Service Terms</a></li>
+                    <li><a href="#">Arena 51 Terms & Conditions</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="languages-region">
+                <div class="languages">
+                    <ul>
+                        <li><a href="#">En (US)</a></li>
+                        <li><a href="#">Ar</a></li>
+                    </ul>
+                </div>
+                <div class="region">
+                    <select>
+                        <option value="north-america">North America</option>
+                        <option value="europe">Europe</option>
+                        <option value="asia">Asia</option>
+                        <option value="south-america">South America</option>
+                        <option value="north-america">North America</option>                       
+                        <option value="africa">Africa</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+    </footer>
+
+    <script src="js/seller.js"></script>
+    <script>
+        document.getElementById('images').addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    document.getElementById('image-preview').src = e.target.result;
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        
+        function uploadGame() {
+        const formData = new FormData(document.getElementById('gameForm'));
+
+        // Convert form data to an object
+        const gameData = {};
+        formData.forEach((value, key) => {
+            gameData[key] = value;
+        });
+
+        // Retrieve existing games from localStorage
+        let games = JSON.parse(localStorage.getItem('games')) || [];
+
+        // Add the new game to the existing array
+        games.push(gameData);
+
+        // Save the updated games array back to localStorage
+        localStorage.setItem('games', JSON.stringify(games));
+
+        console.log('New game added:', gameData);
+        // You can perform further actions here, such as displaying a success message
+    }
+
+
+        
+    </script>
+</body>
+</html>

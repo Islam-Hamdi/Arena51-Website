@@ -1,0 +1,416 @@
+/* Reset CSS */
+/* Reset CSS */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Lato:wght@300&display=swap');
+
+* {
+    font-family: Phantomsans, sans-serif;
+    font-weight: 400;
+    font-style: bold;
+}
+
+
+header {
+    background-color: #07090A;
+    color: #C5C6C7;
+    padding: 10px 0; /* Reduced padding */
+    text-align: center;
+}
+
+.btn{
+    padding: 10px 40px;
+    background: #68C301;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    border: 0;
+    text-shadow: 0 1px 2px #000000;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+
+
+   
+}
+
+.btn:hover {
+    background-color: #1B3D00;
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px; /* Reduced logo size */
+    height: auto;
+    margin-right: 10px; /* Added margin between logo and title */
+}
+
+.title h1 {
+    margin: 0;
+    font-family: Phantomsans, sans-serif;
+    font-size: 24px; /* Reduced font size */
+    font-weight: 500;
+    
+}
+
+nav.nav-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav.nav-bar ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav.nav-bar ul li:last-child {
+    margin-right: 0;
+}
+
+nav.nav-bar ul li a {
+    color: #C5C6C7;
+    text-decoration: none;
+}
+
+nav.nav-bar ul li a:hover {
+    color: #68C301;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+}
+
+.account a {
+    color: #C5C6C7;
+    text-decoration: none;
+}
+
+.account i {
+    margin-right: 5px;
+    color: #68C301;
+}
+
+
+
+
+
+
+
+
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles */
+body {
+    font-family: Phantomsans, sans-serif;
+    background-color: #053777; /* fallback for old browsers */
+  /*  background: -webkit-linear-gradient(to bottom, #1B3D00,  #68C301); /* Chrome 10-25, Safari 5.1-6 */
+   /* background: linear-gradient(to bottom, #1B3D00, #68C301); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   background-color: #0B132B; 
+   color: #C5C6C7; 
+   background-image: url('bg2.jpg'); 
+   background-attachment: fixed;
+   /* background-size: cover;  */
+   background-repeat: no-repeat; 
+   /* background-size: 100% 100%;  */
+   background-position: center; 
+   
+   color: #fff;
+    font-size: 16px;
+
+
+   
+}
+
+/* Header styles */
+header {
+    background-color: #07090A;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: Phantomsans, sans-serif;
+    font-weight: 200;
+    margin: 20px auto;
+    
+}
+
+
+
+/* Main content styles */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+form {
+    width: 45%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 900;
+    font-family: sans-serif;
+    display: block;
+    margin-bottom: 5px;
+
+    text-shadow: 0 1px 2px #000000;
+   
+    font-style: bold;
+    
+   
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-family: Phantomsans, sans-serif;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-weight: 200;
+    border-radius: 5px;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="file"]:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+
+.file-area {
+    position: relative;
+    width: 100%;
+}
+
+.file-area input[type=file] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-area .file-dummy {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.file-area .file-dummy .success {
+    display: none;
+}
+
+.file-area:hover .file-dummy {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.file-area input[type=file]:focus + .file-dummy {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.file-area input[type=file]:valid + .file-dummy {
+    border-color: rgba(0, 255, 0, 0.4);
+    background-color: rgba(0, 255, 0, 0.3);
+}
+
+.file-area input[type=file]:valid + .file-dummy .success {
+    display: inline-block;
+}
+
+.file-area input[type=file]:valid + .file-dummy .default {
+    display: none;
+}
+
+/* Preview container styles */
+.preview-container {
+    width: 45%;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.preview-container img {
+    width: 100%;
+    display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+
+    text-align: center;
+    /* position: fixed; */
+    
+    /* padding: 20px 0; */
+    /* position: absolute; */
+    /* bottom: 0; */
+    width: 100%;
+    
+}
+.footer-nav {
+    background-color: #07090A;
+    color: #C5C6C7;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around; /* Adjusted spacing */
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.top-links,
+.footer-links,
+.social-media,
+.languages-region {
+    margin: 10px; /* Adjusted margin for equal spacing */
+}
+
+.footer-nav a {
+    color: #C5C6C7;
+    text-decoration: none;
+}
+
+.footer-nav i {
+    font-size: 20px; /* Adjust arrow size */
+    vertical-align: middle;
+    margin-left: 5px;
+    color: #68C301; /* Light blue color from your palette */
+}
+
+.languages ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.languages ul li {
+    display: inline;
+    margin-right: 10px;
+    padding: 10px;
+}
+
+.languages ul li:last-child {
+    margin-right: 0;
+}
+
+.region select {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: #1B3D00; /* Darker blue background color */
+    color: #C5C6C7;
+}
+
+.region select:focus {
+    outline: none;
+}
+
+.region select option {
+    background-color: #1B3D00; /* Darker blue background color */
+    color: #C5C6C7;
+}
+
+.footer-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-links li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.social-media a,
+.footer-links a {
+    color: #C5C6C7;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.social-media i {
+    font-size: 30px; /* Adjust social media icon size */
+    color: #68C301; /* Light blue color from your palette */
+}
+
+.languages-region {
+    display: flex;
+    align-items: center;
+}
