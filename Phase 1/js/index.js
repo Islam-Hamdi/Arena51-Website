@@ -38,31 +38,31 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch((error) => console.error("Error fetching data:", error));
 
-        function renderGames(games) {
-            gamesWrapper.innerHTML = ""; // Clear previous games
+    function renderGames(games) {
+        gamesWrapper.innerHTML = ""; // Clear previous games
         
-            games.forEach((game) => {
-                const gameCard = document.createElement("div");
-                gameCard.classList.add("games");
-                gameCard.setAttribute("data-category", game.categories.join(' '));
+        games.forEach((game) => {
+            const gameCard = document.createElement("div");
+            gameCard.classList.add("games");
+            gameCard.setAttribute("data-category", game.categories.join(' '));
         
-                // Create game card HTML structure (similar to your existing cards)
-                gameCard.innerHTML = `
-                    <div class="mywrapper">
-                        <div class="image-container">
-                            <img src="${game.image}" alt="${game.name}" class="banner-image" />
-                            <span class="price">${game.price}</span> <!-- Add price display here -->
-                        </div>
-                        <h1>${game.name}</h1>
-                        <p>${game.description}</p>
+            // Create game card HTML structure (similar to your existing cards)
+            gameCard.innerHTML = `
+                <div class="mywrapper">
+                    <div class="image-container">
+                        <img src="${game.image}" alt="${game.name}" class="banner-image" />
+                        <span class="price">$${game.price}</span> <!-- Add price display here -->
                     </div>
-                    <div class="button-wrapper">
-                        <button class="btn outline">DETAILS</button>
-                        <button class="btn fill">BUY NOW</button>
-                    </div>
-                `;
+                    <h1>${game.name}</h1>
+                    <p>${game.description}</p>
+                </div>
+                <div class="button-wrapper">
+                    <button class="btn outline">DETAILS</button>
+                    <button class="btn fill">BUY NOW</button>
+                </div>
+            `;
         
-                gamesWrapper.appendChild(gameCard);
-            });
-        }
-    });
+            gamesWrapper.appendChild(gameCard);
+        });
+    }
+});
