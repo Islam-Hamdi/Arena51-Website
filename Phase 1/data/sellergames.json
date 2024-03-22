@@ -1,0 +1,20 @@
+[
+ 
+  {
+      "name": "Cyberpunk 2077",
+      "categories": ["RPG", "FPS"],
+      "image": "images/cyberPunk.webp",
+      "description": "RPG game of the year 2024",
+      "price": 60,
+      "quantity": 5
+  },
+ 
+  
+  {
+      "name": "Overwatch 2",
+      "categories": ["FPS"],
+      "image": "images/overwatch-2.jpg",
+      "description": "Winner Webby Award",
+      "price": 0,
+      "quantity": 20
+  }]

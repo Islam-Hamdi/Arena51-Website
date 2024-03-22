@@ -59,36 +59,46 @@ header {
 
 .title h1 {
     margin: 0;
-    font-family: Phantomsans, sans-serif;
+    font-family:  sans-serif;
     font-size: 24px; /* Reduced font size */
     font-weight: 500;
     
 }
 
-nav.nav-bar ul {
+nav ul {
+    font-family:  sans-serif;
     list-style-type: none;
     margin: 0;
     padding: 0;
 }
 
-nav.nav-bar ul li {
+nav ul li {
     display: inline;
     margin-right: 20px;
 }
 
-nav.nav-bar ul li:last-child {
+nav ul li:last-child {
     margin-right: 0;
 }
 
-nav.nav-bar ul li a {
-    color: #C5C6C7;
+nav ul li a {
+    color: #C5C6C7; 
     text-decoration: none;
 }
 
-nav.nav-bar ul li a:hover {
+nav ul li a:hover {
     color: #68C301;
 }
 
+.spcailnav{
+   
+   padding: 5px ;
+    background-color:#68C301;
+    color: #1B3D00;
+}
+.spcailnav:hover {
+    color: #ffffff;
+}
 .account {
     display: flex;
     align-items: center;
