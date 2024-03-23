@@ -63,6 +63,6 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
         
             gamesWrapper.appendChild(gameCard);
-        });
+    });
     }
 });

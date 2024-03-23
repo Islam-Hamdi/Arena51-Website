@@ -857,12 +857,14 @@ main {
 }
 
 label {
+    font-family: "Nanum Gothic Coding", monospace;
     display: block;
     margin-bottom: 5px;
 }
 
 input[type="text"],
 input[type="number"] {
+    font-family: "Nanum Gothic Coding", monospace;
     width: 100%;
     padding: 8px;
     margin-bottom: 10px;
@@ -871,6 +873,7 @@ input[type="number"] {
 }
 
 button[type="submit"] {
+    font-family: "Nanum Gothic Coding", monospace;
     background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
