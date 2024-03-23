@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const gamesWrapper = document.querySelector(".games-wrapper");
-
+    let selectedGame = null; 
     // Fetch JSON data
     fetch("data/games.json")
         .then((response) => response.json())
@@ -16,12 +16,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     renderGames(filteredGames);
                 });
             });
-
+             
             // Event listener for buy now buttons
             const buyNowButtons = document.querySelectorAll(".btn.fill");
             buyNowButtons.forEach((button) => {
                 button.addEventListener("click", () => {
-                    window.location.href = "purchase.html";
+                    window.location.href = "purchase1.html";
                 });
             });
 
@@ -74,5 +74,25 @@ document.addEventListener("DOMContentLoaded", function () {
         
             gamesWrapper.appendChild(gameCard);
     });
+    // function renderGames(games) {
+    //     const purchaseDetails = document.getElementById('purchase-details');
+        
+    //     games.forEach((game) => {
+    //         // Create game details HTML structure
+    //         const gameDetails = document.createElement('div');
+    //         gameDetails.classList.add('game-details');
+            
+    //         // Add game name and description
+    //         const gameName = document.createElement('h2');
+    //         gameName.textContent = game.name;
+    //         gameDetails.appendChild(gameName);
+            
+    //         const gameDescription = document.createElement('p');
+    //         gameDescription.textContent = game.description;
+    //         gameDetails.appendChild(gameDescription);
+            
+    //         // Append game details to purchase1.html
+    //         purchaseDetails.appendChild(gameDetails);
+    //     });    
     }
 });
