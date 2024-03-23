@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/x-icon" href="images/aliens (5).png">
     <script src="js/index.js" defer></script>
+    <script src="js/home.js" defer></script>
+
 
     <title>Arena 51</title>
 </head>
@@ -25,7 +27,7 @@
             </div>
             <nav class="nav-bar">
                 <ul>
-                    <li><a href="#Arena-51-Website.html">Home</a></li>
+                    <li><a href="Arena-51-Website.html">Home</a></li>
                     <li><a href="#categories">Categories</a></li>
                     <li><a href="contact-us.html">Contact Us</a></li>
                 </ul>
@@ -36,9 +38,11 @@
             </div>
             <div class="account">
                 <i class="fas fa-user"></i>
-                <a href="#">Login / Sign Up</a>
+                <a href="#" data-toggle="modal" data-target="#modalLogin">Login / Sign Up</a>
                 <!-- <button class="btnLogin-popup"> Login</button> -->
             </div>
+            <div id="flash-container"></div>
+
         </div>
     </header>
 
@@ -102,6 +106,90 @@
             </div>
         </div>
     </footer>
-    <script src="js/slider.js"></script>
+    <div id="overlay"></div>
+
+<!-- Login modal -->
+<div class="login-modal modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <!-- <button type="button" class="close-button" data-dismiss="modal" aria-label="Close">
+                    <span class="close-icon ion-android-close"></span>
+                </button>
+
+                <h3 class="modal-title mb-0">Sign In</h3> -->
+
+
+                <div class="modal-header">
+                    <h3 class="modal-title mb-0">Sign In</h3>
+                    <i class="close-button fas fa-times" data-dismiss="modal" aria-label="Close"></i>
+                    <!-- <span class="close-icon ion-android-close"></span> -->
+                    </button>
+                </div>
+
+
+
+                <div class="gap-1"></div>
+                <form action="#" class="login-form text-white">
+                    <div class="form-group">
+                        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" class="required form-control" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="login-btn btn btn-rounded btn-color-white btn-block">Sign In</button>
+                    </div>
+                    <div class="form-group text-center">
+                        <small><a href="#">Forgot your password?</a> | <a href="#" data-toggle="modal" data-target="#modalSignup">Not a member? Sign up</a></small>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sign-up modal -->
+<div class="signup-modal modal" id="modalSignup" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title mb-0">Sign Up</h3>
+                <i class="close-button fas fa-times" data-dismiss="modal" aria-label="Close"></i>
+            </div>
+            <div class="modal-body">
+                <form action="#" class="signup-form text-white">
+                    <div class="form-group">
+                        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" class="form-control" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="confirm-password" name="confirm-password" class="form-control" placeholder="Confirm Password" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="user-type" name="user-type" class="form-control" required>
+                            <option value="" disabled selected>Select User Type</option>
+                            <option value="seller">Seller</option>
+                            <option value="buyer">Buyer</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="signup-btn btn btn-rounded btn-color-white btn-block">Sign Up</button>
+                    </div>
+                    <div class="form-group text-center">
+                        <small><a href="#" id="loginLink">Already a member? Log in</a></small>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 </body>
 </html>

@@ -35,6 +35,16 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log("Filtered games:", filteredGames);
                 renderGames(filteredGames);
             });
+            // Event listener for details buttons
+            const detailsButtons = document.querySelectorAll(".btn.outline");
+            detailsButtons.forEach((button, index) => {
+                button.addEventListener("click", () => {
+                    const selectedGame = data[index]; // Get the game data corresponding to the clicked button
+                    const gameName = encodeURIComponent(selectedGame.name); // Encode game name for URL
+                    window.location.href = `game-details.html?name=${gameName}`; // Navigate to game details page with query parameter
+                });
+            });
+
         })
         .catch((error) => console.error("Error fetching data:", error));
 

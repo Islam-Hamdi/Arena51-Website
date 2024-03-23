@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
- 
-
 @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
 
 * {
@@ -851,49 +849,341 @@ main {
 
 #purchaseForm {
     padding: 20px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #07090A;
 }
 
-label {
-    font-family: "Nanum Gothic Coding", monospace;
-    display: block;
-    margin-bottom: 5px;
+
+
+#purchaseForm {
+    label {
+        display: block;
+        margin-bottom: 5px;
+    
+    }
+    input[type="text"],
+    input[type="number"] {
+        /* font-family: "Nanum Gothic Coding", monospace; */
+        width: 90%;
+        padding: 8px;
+        margin-bottom: 10px;
+        background-color: #1B3D00;
+        border: 1px solid #1B3D00;
+        border-radius: 5px;
+    }
+    
+    button[type="submit"] {
+        /* font-family: "Nanum Gothic Coding", monospace; */
+        background-color: #68C301;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    button[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    
+    #cardNumber img {
+        vertical-align: middle;
+        /* margin-left: 10px; */
+        align-items: center;
+    }
 }
 
-input[type="text"],
-input[type="number"] {
-    font-family: "Nanum Gothic Coding", monospace;
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button[type="submit"] {
-    font-family: "Nanum Gothic Coding", monospace;
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-#cardNumber img {
-    vertical-align: middle;
-    margin-left: 5px;
-}
 
 @media screen and (max-width: 600px) {
     input[type="text"],
     input[type="number"] {
         width: 100%;
     }
+}
+/* Modal styling */
+
+
+.modal .modal-dialog {
+    max-width: 400px;
+    margin: auto;
+    background-color: #07090A;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(104, 195, 1, 0.3);
+}
+
+.modal .modal-body {
+    padding: 20px;
+}
+
+.modal .modal-body h3 {
+    color: #68C301;
+}
+
+.modal .modal-body .form-group {
+    margin-bottom: 15px;
+}
+
+.modal .modal-body .form-control {
+    width: calc(100% - 20px); /* Adjust the width as needed */
+    padding: 10px;
+    border: 1px solid #1B3D00;
+    background-color: #1B3D00;
+    border-radius: 5px;
+}
+
+.modal .modal-body .login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #68C301;
+    color: #fff;
+}
+
+
+.modal .modal-body .login-btn:hover {
+    color: #07090A;
+}
+/* Style for login form input fields when focused */
+.modal .modal-body .form-control:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #68C301; /* Change border color when focused */
+    box-shadow: 0 0 5px rgba(104, 195, 1, 0.5); /* Add box shadow when focused */
+}
+
+/* Show the modal when it's active */
+.modal-active {
+    display: block !important; /* Important to override default display value */
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    z-index: 9998; /* Ensure the overlay is behind the modal */
+}
+
+.modal .modal-body a {
+    color: #C5C6C7; /* Change the color to your desired color */
+    text-decoration: underline; /* Optionally, you can add underline */
+}
+
+.modal .modal-body a:hover {
+    color: #fff; /* Change the color of the links on hover */
+}
+
+#flash-container {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background-color: #f44336; /* Red color */
+    color: #fff; /* White text */
+    border-radius: 5px;
+    z-index: 9999;
+}
+/* Style for modal header */
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 10px 20px; */
+    margin-bottom: 1.5rem;
+}
+
+/* Style for close button */
+.close-button {
+    background: none;
+    align-content: center;
+    border: none;
+    cursor: pointer;
+    color: #68C301;
+}
+
+.close-icon {
+    font-size: 24px;
+    color: #fff; /* Adjust color as needed */
+}
+
+.close-icon:hover {
+    color: #ff0000; /* Change color on hover if needed */
+}
+
+
+/* Style for the sign-up modal container */
+.modalSignup {
+    display: none; /* Initially hide the modal */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #07090A; /* Background color */
+    color: #C5C6C7; /* Text color */
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 9999; /* Ensure the modal stays on top of other elements */
+}
+
+/* Style for the sign-up modal title */
+.modalSignup h3 {
+    color: #68C301; /* Title color */
+    margin-bottom: 20px; /* Add some space below the title */
+}
+
+/* Style for the input fields in the sign-up form */
+.modalSignup input[type="text"],
+.modalSignup input[type="email"],
+.modalSignup input[type="password"] {
+    width: 100%; /* Take up full width */
+    padding: 10px; /* Add padding */
+    margin-bottom: 10px; /* Add space between input fields */
+    border: 1px solid #1B3D00; /* Border color */
+    background-color: #1B3D00; /* Background color */
+    color: #C5C6C7; /* Text color */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Style for the sign-up button */
+.modalSignup .signup-btn {
+    width: 100%; /* Take up full width */
+    padding: 10px; /* Add padding */
+    background-color: #68C301; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Add pointer cursor on hover */
+}
+
+/* Style for the sign-up button on hover */
+.modalSignup .signup-btn:hover {
+    background-color: #1B3D00; /* Darker background color */
+}
+
+/* Style for the close button */
+.modalSignup .close-button {
+    position: absolute; /* Position the button */
+    top: 10px; /* Add space from the top */
+    right: 10px; /* Add space from the right */
+    color: #68C301; /* Button color */
+    background: none; /* Transparent background */
+    border: none; /* Remove border */
+    cursor: pointer; /* Add pointer cursor on hover */
+}
+
+
+.modalSignup.active {
+    display: block;
+}
+
+/* Add more styles for the content inside the sign-up modal as needed */
+
+/* Position the modals */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s ease; /* Add transition effect for sliding animation */
+    z-index: 9999;
+    left: 50%;
+    padding: 20px;
+    color: #07090A;
+}
+
+
+/* Slide the modals to the center when active */
+.modal-active {
+    left: 50%; /* Center the modal */
+    /* transform: translateX(-50%); */
+
+}
+
+
+
+
+
+/* game details */
+.game-details {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.game {
+    padding: 0px 80px;
+    gap: 2rem;
+    /* margin-top: 20px; */
+    display: flex;
+    margin-bottom: 30px;
+    /* justify-items: center; */
+    justify-content: space-evenly;
+    align-items: center;
+    
+}
+
+.game img {
+    width: 400px; /* Set fixed width for the image */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.game .game-info {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: column;
+    /* background-color: #07090A; */
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+}
+
+
+.game h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.game p {
+    margin-bottom: 10px;
+}
+
+button#add-to-cart {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #79e200;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button#add-to-cart:hover {
+    background-color: #68C301;
+}
+.heading {
+    text-align: left;
+}
+
+/* .heading::after {
+    content: "";
+    display: block;
+    -webkit-box-flex: 100;
+        -ms-flex: 100;
+            flex: 100;
+    border-bottom: 4px solid #79e200;
+    -webkit-transform: translateY(-12px);
+        -ms-transform: translateY(-12px);
+            transform: translateY(-12px);
+} */
+.line {
+    border-bottom: 4px solid #79e200;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 300px;
 }

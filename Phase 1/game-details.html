@@ -11,8 +11,7 @@
     <link rel="icon" type="image/x-icon" href="images/aliens (5).png">
     <script src="js/index.js" defer></script>
     <script src="js/home.js" defer></script>
-
-    <title>Arena 51</title>
+    <title>Game Details</title>
 </head>
 <body>
     <header>
@@ -24,7 +23,7 @@
                     <h1><span class="arena">Arena</span> <span class="number">51</span></h1>
                 </div>
             </div>
-            <nav>
+            <nav class="nav-bar">
                 <ul>
                     <li><a href="Arena-51-Website.html">Home</a></li>
                     <li><a href="#categories">Categories</a></li>
@@ -33,76 +32,44 @@
             </nav>
             <div class="search">
                 <i class="fas fa-search"></i> <input type="text" id="search-box" placeholder="Search for Games">
-                <button type="submit">Search</button>
+                <button type="button" id="search-button">Search</button>
             </div>
             <div class="account">
                 <i class="fas fa-user"></i>
-                <a href="#">Login / Sign Up</a>
+                <a href="#" data-toggle="modal" data-target="#modalLogin">Login / Sign Up</a>
+                <!-- <button class="btnLogin-popup"> Login</button> -->
             </div>
+            <div id="flash-container"></div>
+
         </div>
     </header>
 
     <main>
-        <!-- Embedded Google Map -->
-
-        <section class="about-us-container">
-            <section class="team-info">
-                <h1>About Our Team</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tempus auctor sem a ultrices. Duis vehicula turpis eu turpis vehicula eleifend. Nullam porttitor mauris vitae nulla sodales, non posuere tortor rhoncus.</p>
-                <p>Nunc non lectus id arcu gravida feugiat. Curabitur ut est in lacus efficitur placerat. Integer vel justo non nulla consectetur congue. Nam tempus lacus sed risus congue, ac aliquam risus placerat.</p>
-                <p>Donec varius sem id nisi tempus, at auctor felis cursus. Pellentesque vel erat vel leo ultricies feugiat sed vitae lacus. Aenean congue enim nec scelerisque hendrerit.</p>
-                <p>This project is a part of our web development course where we learned various skills including HTML, CSS, JavaScript, and more.</p>
-            </section>
-            <section class="map-container">
-                <h1>Our Headquarter</h1>
-                <iframe id="mapFrame" class="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.7690972443297!2d51.485534149219106!3d25.37905403038381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45dd1a7e555553%3A0x61f3df230682dfad!2sCollege%20Of%20Engineering%20(H07)!5e0!3m2!1sen!2sqa!4v1710266163836!5m2!1sen!2sqa" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-            </section>
-        </section>
-
-
-        <section id="contact-us" class="contact-us">
-            <h2>Contact Us</h2>
-            <form action="submit_contact_form.php" method="POST">
-                <div>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div>
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
-
-
+        <div class="game-details">
+            <!-- Game details will be populated here -->
+        </div>
     </main>
 
     <footer>
-        <!-- <div class="container"> -->
-            <div class="footer-nav">
-                <a href="#top"><i class="fas fa-arrow-up"></i> Back to Top</a>
-                <div class="social-media">
-                    <!-- Social media icons with links -->
-                    <a href="#"><i class="fab fa-facebook"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <!-- Add more social media icons as needed -->
-                </div>
-                <div class="footer-links">
-                    <ul>
-                        <li><a href="#">Internet Service Terms</a></li>
-                        <li><a href="#">Arena 51 Terms & Conditions</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Support</a></li>
-                    </ul>
-                </div>
-                <div class="languages-region">
+        <div class="footer-nav">
+            <!-- Footer content from main page -->
+            <a href="#top"><i class="fas fa-arrow-up"></i> Back to Top</a>
+            <div class="social-media">
+                <!-- Social media icons with links -->
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <!-- Add more social media icons as needed -->
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#">Internet Service Terms</a></li>
+                    <li><a href="#">Arena 51 Terms & Conditions</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="languages-region">
                 <div class="languages">
                     <ul>
                         <li><a href="#">En (US)</a></li>
@@ -120,7 +87,6 @@
                     </select>
                 </div>
             </div>
-            
         </div>
     </footer>
 <!-- Login modal -->
@@ -163,5 +129,6 @@
         </div>
     </div>
 </div>
+    <script src="js/game-details.js" defer></script>
 </body>
 </html>
