@@ -15,6 +15,57 @@ header {
     padding: 10px 0; /* Reduced padding */
     text-align: center;
 }
+/* Category dropdown styles */
+select#category {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-family: Phantomsans, sans-serif;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-weight: 200;
+    border-radius: 5px;
+}
+
+select#category:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+/* Style dropdown arrow */
+select#category::-ms-expand {
+    display: none;
+}
+
+/* Custom dropdown arrow */
+select#category::after {
+    content: "\25BC";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Style for when dropdown is open */
+select#category option:checked {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+/* Style for dropdown options */
+select#category option {
+    background-color: rgba(0, 0, 0, 0.5); /* Darker blue background color */
+    color:  #fff;
+    padding: 10px; /* Add padding to improve visibility */
+}
+
+/* Style for dropdown options on hover */
+select#category option:hover {
+    background-color: #68C301; /* Light green background color */
+    color: #fff; /* White text color */
+}
+
+
 
 .btn{
     padding: 10px 40px;
