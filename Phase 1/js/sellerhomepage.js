@@ -1,34 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
     const gamesWrapper = document.querySelector(".games-wrapper");
 
-    // Fetch JSON data
-    fetch("data/sellergames.json")
-        .then((response) => response.json())
-        .then((data) => {
-            renderGames(data); // Initially render all games
+    // Retrieve games from local storage
+    let games = JSON.parse(localStorage.getItem('games')) || [];
 
-            // Add event listeners to category buttons
-            const categoryButtons = document.querySelectorAll(".categories button");
-            categoryButtons.forEach((button) => {
-                button.addEventListener("click", () => {
-                    const category = button.dataset.category;
-                    const filteredGames = data.filter((game) => category === "All" || game.categories.includes(category));
-                    renderGames(filteredGames);
-                });
-            });
+    console.log("Retrieved games:", games); // Log the retrieved games
 
-            // Event listener for search button
-            const searchInput = document.getElementById("search-box");
-            const searchButton = document.getElementById("search-button");
-            searchButton.addEventListener("click", function () {
-                console.log("Search button clicked!");
-                const searchTerm = searchInput.value.trim().toLowerCase();
-                const filteredGames = data.filter((game) => game.name.toLowerCase().includes(searchTerm));
-                console.log("Filtered games:", filteredGames);
-                renderGames(filteredGames);
-            });
-        })
-        .catch((error) => console.error("Error fetching data:", error));
+    renderGames(games); // Initially render all games
+
+    // Event listener for search button
+    const searchInput = document.getElementById("search-box");
+    const searchButton = document.getElementById("search-button");
+    searchButton.addEventListener("click", function () {
+        console.log("Search button clicked!");
+        const searchTerm = searchInput.value.trim().toLowerCase();
+        const filteredGames = games.filter((game) => game.name.toLowerCase().includes(searchTerm));
+        console.log("Filtered games:", filteredGames);
+        renderGames(filteredGames);
+    });
 
     function renderGames(games) {
         gamesWrapper.innerHTML = ""; // Clear previous games
@@ -36,7 +25,11 @@ document.addEventListener("DOMContentLoaded", function () {
         games.forEach((game) => {
             const gameCard = document.createElement("div");
             gameCard.classList.add("games");
-            gameCard.setAttribute("data-category", game.categories.join(' '));
+            
+            // Check if game.categories exists before joining
+            const categories = game.categories ? game.categories.join(' ') : '';
+    
+            gameCard.setAttribute("data-category", categories);
         
             // Create game card HTML structure (similar to your existing cards)
             gameCard.innerHTML = `
@@ -53,21 +46,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     </div>
                 </div>
                 <div class="button-wrapper">
-                    <button class="btn outline">DETAILS</button>
+                    <button class="btn outline sell-new-game-button">DETAILS</button>
                 </div>
             `;
         
             gamesWrapper.appendChild(gameCard);
         });
     }
-
-   
-    
-    const mybtnnn = document.querySelectorAll("sell-new-game-button");
-    mybtnnn.forEach((button) => {
-        button.addEventListener("click", () => {
-            window.location.href = "seller.html";
-        });
-    });
     
 });
