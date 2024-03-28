@@ -842,45 +842,7 @@ main {
     background-color: white;
 }
 
-#container {
-    width: 80%;
-    margin: 0 auto;
-}
 
-#purchaseForm {
-    padding: 20px;
-    border-radius: 5px;
-    background-color: #07090A;
-}
-
-#purchaseForm label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-#purchaseForm input[type="text"],
-#purchaseForm input[type="number"] {
-    width: 90%;
-    padding: 8px;
-    margin-bottom: 10px;
-    background-color: #1B3D00;
-    border: 1px solid #1B3D00;
-    border-radius: 5px;
-    color: white; /* Added for better visibility */
-}
-
-#purchaseForm button[type="submit"] {
-    background-color: #68C301;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#purchaseForm button[type="submit"]:hover {
-    background-color: #45a049;
-}
 
 #cardNumber img {
     vertical-align: middle;
@@ -1146,7 +1108,7 @@ main {
     margin-bottom: 10px;
 }
 
-button#add-to-cart {
+button#buynow {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #79e200;
@@ -1157,7 +1119,7 @@ button#add-to-cart {
     transition: background-color 0.3s ease;
 }
 
-button#add-to-cart:hover {
+button#buynow:hover {
     background-color: #68C301;
 }
 .heading {
@@ -1202,7 +1164,7 @@ button#add-to-cart:hover {
     margin-top: 10px;
 }
 
-#purchase-btn {
+#purchase-btn, #confirm-purchase-btn {
     padding: 10px 20px;
     background-color: #79e200;
     color: #fff;
@@ -1211,3 +1173,34 @@ button#add-to-cart:hover {
     cursor: pointer;
     margin-top: 10px;
 }
+.purchase-container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.purchase-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.purchase-form input[type="number"],
+.purchase-form input[type="tel"],
+.purchase-form textarea,
+.purchase-form input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+#purchase-details{
+    color: #ccc;
+}
+.purchase-form button {
+    padding: 10px 20px;
+    background-color: #555;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+

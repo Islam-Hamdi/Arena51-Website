@@ -2,18 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Purchase Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/index.js" defer></script>
-    <script src="js/home.js" defer></script>
+    <script src="purchase.js"></script>
+    <script src="user.js"></script>
+    <title>Purchase Page</title>
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">
                 <img src="images/logo.png" alt="Logo">
-
                 <div class="title">
                     <h1><span class="arena">Arena</span> <span class="number">51</span></h1>
                 </div>
@@ -32,38 +36,40 @@
             <div class="account">
                 <i class="fas fa-user"></i>
                 <a href="#" data-toggle="modal" data-target="#modalLogin">Login / Sign Up</a>
-                <!-- <button class="btnLogin-popup"> Login</button> -->
             </div>
             <div id="flash-container"></div>
-
         </div>
     </header>
-    <h1>Game Details</h1>
-    <!-- Display game details -->
-    <div id="game-details">
-        <h2>Game Title</h2>
-        <p>Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        <p>Price: $50</p>
-        <img src="game_image.jpg" alt="Game Image">
-    </div>
 
-    <!-- Quantity input -->
-    <label for="quantity">Quantity:</label>
-    <input type="number" id="quantity" min="1" value="1">
-
-    <!-- Display user balance and enable/disable purchase button based on balance -->
-    <p>Your balance: $100</p>
-    <button id="purchase-btn" onclick="purchaseGame()">Purchase</button>
+    <main>
+        <div class="game-details">
+            <!-- Game details will be populated here -->
+        </div>
+        <div class="purchase-container">
+            <h1 id="purchase-details">Purchase Details</h1>
+            <div id="item-details"></div>
+            <form class="purchase-form">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" required><br>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required><br>
+                <h2>Shipping Address</h2>
+                <label for="address">Address:</label>
+                <textarea id="address" name="address" required></textarea><br>
+                <label for="zip">Zip Code:</label>
+                <input type="text" id="zip" name="zip" required><br>
+                <button id="confirm-purchase-btn" onclick="confirmPurchase()">Confirm Purchase</button>
+            </form>
+        </div>
+    </main>
 
     <footer>
         <div class="footer-nav">
             <a href="#top"><i class="fas fa-arrow-up"></i> Back to Top</a>
             <div class="social-media">
-                <!-- Social media icons with links -->
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
-                <!-- Add more social media icons as needed -->
             </div>
             <div class="footer-links">
                 <ul>
@@ -86,50 +92,11 @@
                         <option value="europe">Europe</option>
                         <option value="asia">Asia</option>
                         <option value="south-america">South America</option>
-                        <option value="north-america">North America</option>                       
                         <option value="africa">Africa</option>
                     </select>
                 </div>
             </div>
         </div>
     </footer>
-    <script>
-        // Function to increment quantity
-        function incrementQuantity() {
-            var quantityInput = document.getElementById('quantity');
-            quantityInput.value = parseInt(quantityInput.value) + 1;
-        }
-
-        // Function to check balance and enable/disable purchase button
-        function checkBalance() {
-            var userBalance = 100; // Get user balance from server/database
-            var gamePrice = 50; // Get game price from server/database
-            var quantity = parseInt(document.getElementById('quantity').value);
-            var purchaseBtn = document.getElementById('purchase-btn');
-
-            if (userBalance >= gamePrice * quantity) {
-                purchaseBtn.disabled = false; // Enable purchase button
-            } else {
-                purchaseBtn.disabled = true; // Disable purchase button
-            }
-        }
-
-    // Function to handle game purchase
-    function purchaseGame() {
-        var quantity = parseInt(document.getElementById('quantity').value);
-        var gamePrice = 50; // Get game price from server/database
-        var totalAmount = gamePrice * quantity;
-
-        // Send request to server to process purchase
-        // For now, let's assume the purchase is successful
-        // After a successful purchase, redirect the user to payment.html
-        window.location.href = "payment.html";
-    }
-
-    // Call checkBalance function when page loads and when quantity changes
-    window.onload = checkBalance;
-    document.getElementById('quantity').addEventListener('change', checkBalance);
-
-    </script>
 </body>
 </html>

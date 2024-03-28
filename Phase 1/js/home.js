@@ -1,4 +1,23 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
+        try {
+            const response = await fetch('../users.json');
+            const data = await response.json();
+            console.log(data);
+        } catch (error) {
+            console.error('Error fetching JSON:', error);
+        }
+    });
+    
+
+    // let json = import('../users.json'); 
+    // console.log(json);
+    // json.forEach((element, index, array) => { 
+    //     console.log(element);
+    // });
+    // json.then((data) => (console.log(data)));
+    // let data = JSON.parse(json);
+    // console.log(JSON.parse(json));
+    // console.log(data);
     // Fetch the JSON data
     fetch("data/game_offers.json")
         .then(response => response.json())
@@ -7,7 +26,6 @@ document.addEventListener('DOMContentLoaded', function () {
             initSlider(slides);
         })
         .catch(error => console.error('Error fetching game offers:', error));
-
     // Function to initialize the slider
     function initSlider(slides) {
         const slider = document.querySelector('.image-slider');
@@ -123,11 +141,14 @@ document.addEventListener('DOMContentLoaded', function () {
             // Get input values
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
-    
+            console.log(username, password);
+
             // Fetch user data from JSON file
             fetch('users.json')
                 .then(response => response.json())
                 .then(users => {
+                    console.log(users);
+
                     // Find user with matching username
                     const user = users.find(u => u.username === username);
     
@@ -206,7 +227,7 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
     signupModal.classList.remove('modal-active');
     overlay.style.display = 'none'; // Hide the overlay
 });
-    });
+    
     document.addEventListener("DOMContentLoaded", function () {
         const gamesWrapper = document.querySelector(".games-wrapper");
     
