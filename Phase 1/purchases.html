@@ -2,16 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="purchase.js"></script>
-    <script src="auth.js"></script>
-    <title>Purchase Page</title>
+    <title>Purchase History</title>
+    <style>
+        /* Define your CSS styles here */
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .table th, .table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .table th {
+            background-color: #f2f2f2;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -34,35 +41,36 @@
                 <button type="button" id="search-button">Search</button>
             </div>
             <div class="account">
-                <i class="fas fa-user"></i>
-                <a href="#" data-toggle="modal" data-target="#modalLogin">Login / Sign Up</a>
+                <div class="authenticated">
+                    <span class="account-username"></span>
+                    <button class="btn btn-danger" id="logout">Logout</button>
+                </div>
+                <div class="not-authenticated">
+                    <i class="fas fa-user"></i>
+                    <a href="#" data-toggle="modal" data-target="#modalLogin">Login / Sign Up</a>
+                </div>
             </div>
             <div id="flash-container"></div>
         </div>
     </header>
-
     <main>
-        <div class="game-details">
-            <!-- Game details will be populated here -->
-        </div>
-        <div class="purchase-container">
-            <h1 id="purchase-details">Purchase Details</h1>
-            <div id="item-details"></div>
-            <form class="purchase-form">
-                <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="1" required><br>
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required><br>
-                <h2>Shipping Address</h2>
-                <label for="address">Address:</label>
-                <textarea id="address" name="address" required></textarea><br>
-                <label for="zip">Zip Code:</label>
-                <input type="text" id="zip" name="zip" required><br>
-                <button id="confirm-purchase-btn" onclick="confirmPurchase()">Confirm Purchase</button>
-            </form>
-        </div>
-    </main>
-
+    <h1>Purchase History</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Zip Code</th>
+                <th>Item Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Purchase history rows will be dynamically added here -->
+        </tbody>
+    </table>
+    </main> 
     <footer>
         <div class="footer-nav">
             <a href="#top"><i class="fas fa-arrow-up"></i> Back to Top</a>
@@ -98,5 +106,29 @@
             </div>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const table = document.querySelector(".table");
+            const purchases_history = JSON.parse(localStorage.getItem("purchases_history")) || [];
+            const tbody = table.querySelector('tbody');
+
+            if(purchases_history.length === 0) {
+                tbody.innerHTML = "<tr><td colspan='6'>There are no purchase history</td></tr>";
+            } else {
+                purchases_history.forEach((purchase) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${purchase.phone}</td>
+                        <td>${purchase.address}</td>
+                        <td>${purchase.zip}</td>
+                        <td>${purchase.itemName}</td>
+                        <td>${purchase.price} $</td>
+                        <td>${purchase.quantity}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
