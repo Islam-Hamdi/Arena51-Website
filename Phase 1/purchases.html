@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/x-icon" href="images/aliens (5).png">
+    <script src="js/auth.js" defer></script>
     <script src="purchases.js"></script>   
     <title>Purchase History</title>
     <style>
@@ -32,6 +33,7 @@
         <div class="container">
             <div class="logo">
                 <img src="images/logo.png" alt="Logo">
+
                 <div class="title">
                     <h1><span class="arena">Arena</span> <span class="number">51</span></h1>
                 </div>
@@ -49,7 +51,7 @@
             </div>
             <div class="account">
                 <div class="authenticated">
-                    <span class="account-username"></span>
+                    <span class="account-username"></span> <!-- This is where the username will appear -->
                     <button class="btn btn-danger" id="logout">Logout</button>
                 </div>
                 <div class="not-authenticated">
@@ -113,6 +115,46 @@
             </div>
         </div>
     </footer>
+    <!-- Login modal -->
+<div class="login-modal modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-body">
+                <!-- <button type="button" class="close-button" data-dismiss="modal" aria-label="Close">
+                    <span class="close-icon ion-android-close"></span>
+                </button>
+
+                <h3 class="modal-title mb-0">Sign In</h3> -->
+
+
+                <div class="modal-header">
+                    <h3 class="modal-title mb-0">Sign In</h3>
+                    <i class="close-button fas fa-times" data-dismiss="modal" aria-label="Close"></i>
+                    <!-- <span class="close-icon ion-android-close"></span> -->
+                    </button>
+                </div>
+
+
+
+                <div class="gap-1"></div>
+                <form action="#" class="login-form text-white" id="loginForm">
+                    <div class="form-group">
+                        <input type="text" id="username" name="username" class="form-control" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="password" name="password" class="required form-control" placeholder="Password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="login-btn btn btn-rounded btn-color-white btn-block">Sign In</button>
+                    </div>
+                    <div class="form-group text-center">
+                        <small><a href="#">Forgot your password?</a> | <a href="#" data-toggle="modal" data-target="#modalSignup">Not a member? Sign up</a></small>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const table = document.querySelector(".table");
