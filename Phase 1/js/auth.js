@@ -18,18 +18,18 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     const account_username = document.querySelector(".account .account-username");
     const logout = document.getElementById("logout");
-    let customer = JSON.parse(localStorage.getItem("customer"));
-    if (customer) {
+    let user = JSON.parse(localStorage.getItem("user"));
+    if (user) {
       notauthenticated_account.style.display = "none";
       authenticated_account.style.display = "block";
-      account_username.textContent = customer.username;
+      account_username.textContent = user.username;
     } else {
       notauthenticated_account.style.display = "block";
       authenticated_account.style.display = "none";
     }
     logout.addEventListener("click", function () {
-      localStorage.removeItem("customer");
-      location.reload();
+      localStorage.removeItem("user");
+      window.location.href = "Arena-51-Website.html"; // Redirect to main webpage
     });
   
     const loginLink = document.querySelector(
@@ -79,15 +79,21 @@ document.addEventListener("DOMContentLoaded", function () {
                   "Login successful! Welcome, " + user.username,
                   true
                 );
-                localStorage.setItem("customer", JSON.stringify(user));
+                localStorage.setItem("user", JSON.stringify(user));
                 setTimeout(function () {
-                  location.reload();
-                }, 3000); // Reload after 3 seconds
+      // Redirect based on user type
+      if (user.userType === "Seller") {
+        window.location.href = "sellerhomepage.html"; // Redirect to seller page
+      } else {
+        window.location.href = "Arena-51-Website.html"; // Redirect to main webpage
+      }
+                    }, 3000); // Reload after 3 seconds
                 // Redirect based on user type
               } else {
                 // Password incorrect, show flash message
                 showFlashMessage("Incorrect password. Please try again.", false);
               }
+              
             } else {
               // Username not found, show flash message
               showFlashMessage(
