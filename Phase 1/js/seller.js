@@ -42,18 +42,24 @@ document.addEventListener('DOMContentLoaded', function() {
     
         // Get existing games from local storage or initialize an empty array
         let games = JSON.parse(localStorage.getItem('games')) || [];
-        // Add new game to the games array
+        let sellerGames = JSON.parse(localStorage.getItem('sellerGames')) || [];
+        
+        // Add new game to both games arrays
         games.push(newGame);
-        // Save the updated games array back to local storage
+        sellerGames.push(newGame);
+        
+        // Save the updated games arrays back to local storage
         localStorage.setItem('games', JSON.stringify(games));
+        localStorage.setItem('sellerGames', JSON.stringify(sellerGames));
     
         // Reset the form
         form.reset();
         // Inform the user that the game has been added successfully
         alert('New game added successfully!');
     
-        // Log the updated games array
+        // Log the updated games arrays
         console.log('Updated games array:', games);
+        console.log('Updated seller games array:', sellerGames);
     });
     
 });

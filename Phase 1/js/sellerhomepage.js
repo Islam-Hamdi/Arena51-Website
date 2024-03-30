@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const gamesWrapper = document.querySelector(".games-wrapper");
 
     // Retrieve games from local storage
-    let games = JSON.parse(localStorage.getItem('games')) || [];
+    let games = JSON.parse(localStorage.getItem('sellerGames')) || [];
 
     console.log("Retrieved games:", games); // Log the retrieved games
 
