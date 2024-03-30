@@ -24,18 +24,36 @@ document.addEventListener('DOMContentLoaded', function () {
                         <p>${game.description}</p>
                         <p>Price: $${game.price}</p>
                         <p>Quantity Available: ${game.quantity}</p>
-                        <button id="add-to-cart">Add to Cart</button>
+                        <button class ="btn fill buy-now" >Buy Now</button>
                         </div>
                     </div>
                 `;
                 gameDetails.innerHTML = html;
 
-                // Add event listener for add to cart button
-                document.getElementById('add-to-cart').addEventListener('click', function() {
-                    // Handle adding to cart
-                    alert('Added to cart: ' + game.name);
+                // // Add event listener for add to cart button
+                // document.querySelector('.buy-now').addEventListener('click', function() {
+                //     // Handle adding to cart
+                //     alert('Added to cart: ' + game.name);
+                // });
+            // Event listener for buy now buttons
+            const buyNowButtons = document.querySelectorAll(".buy-now");
+            buyNowButtons.forEach((button) => {
+                button.addEventListener("click", (event) => {
+                    if (user) {
+                        let user_balance = user.balance;
+                        let game_id = event.target.dataset.gameid;
+                        let game = data.find((u) => u.id == game_id);
+                        if (user_balance > game.price) {
+                            localStorage.setItem("game", JSON.stringify(game));
+                            window.location.href = "purchase1.html";
+                        } else {
+                            showFlashMessage("Your balance is not enough", false);
+                        }
+                    } else {
+                        showFlashMessage("You must login to be able to buy", false);
+                    }
                 });
-
+            });
                 // Filter other games from the same category
                 const otherGames = games.filter(g => g.categories.includes(game.categories[0]) && g.name !== game.name);
 
