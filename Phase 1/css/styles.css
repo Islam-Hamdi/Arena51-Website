@@ -621,9 +621,9 @@ main {
 
     .table th,
     .table td {
-        font-size: 12px; /* Adjust font size for better readability */
-        padding: 6px; /* Adjust padding for better spacing */
-    }
+         font-size: 12px; /* Adjust font size for better readability */
+         padding: 6px; /* Adjust padding for better spacing */
+    } 
 
 
     .purchase-history-element {
@@ -1311,7 +1311,7 @@ main {
     margin-bottom: 10px;
 }
 
-button#buynow {
+button#buynow, #confirm-purchase-btn{
     padding: 10px 20px;
     font-size: 16px;
     background-color: #79e200;
@@ -1346,7 +1346,40 @@ button#buynow:hover {
     margin-bottom: 20px;
     width: 300px;
 }
+.purchase-form input[type="number"],
+.purchase-form input[type="tel"],
+.purchase-form textarea,
+.purchase-form input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.purchase-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+input[type="number"],
+input[type="tel"],
+textarea,
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-weight: 300;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
 
+input[type="number"]:focus,
+input[type="tel"]:focus,
+textarea:focus,
+input[type="text"]:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline: -webkit-focus-ring-color auto 5px;
+}
 /* #game-details {
     padding: 20px;
     margin-top: 20px;
@@ -1409,3 +1442,27 @@ button#buynow:hover {
     display: flex;
     flex-direction: column;
 }
+/* Style for the table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Style for table header */
+.table th {
+    /* background-color: #f2f2f2;
+    border: 1px solid #dddddd; */
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px;
+    text-align: left;
+}
+
+/* Style for table body */
+.table td {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px;
+    text-align: left;
+}
+
