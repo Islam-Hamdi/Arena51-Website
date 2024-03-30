@@ -13,6 +13,21 @@ document.addEventListener("DOMContentLoaded", function () {
     let user = JSON.parse(localStorage.getItem("user"));
     const gamesWrapper = document.querySelector(".games-wrapper");
 
+    // Check if games exist in localStorage
+    let savedGames = JSON.parse(localStorage.getItem("games"));
+    if (!savedGames) {
+        // If games don't exist in localStorage, fetch them from data/games.json
+        fetch("data/games.json")
+            .then((response) => response.json())
+            .then((data) => {
+                renderGames(data); // Render games from fetched data
+                localStorage.setItem("games", JSON.stringify(data)); // Save fetched games to localStorage
+            })
+            .catch((error) => console.error("Error fetching games:", error));
+    } else {
+        // If games exist in localStorage, render them from localStorage
+        renderGames(savedGames);
+    }
     fetch("data/game_offers.json")
         .then((response) => response.json())
         .then((slides) => {
@@ -147,17 +162,19 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             // Event listener for search button
-            const searchInput = document.getElementById("search-box");
-            const searchButton = document.getElementById("search-button");
-            searchButton.addEventListener("click", function () {
-                console.log("Search button clicked!");
-                const searchTerm = searchInput.value.trim().toLowerCase();
-                const filteredGames = allGames.filter((game) =>
-                    game.name.toLowerCase().includes(searchTerm)
-                );
-                console.log("Filtered games:", filteredGames);
-                renderGames(filteredGames);
-            });
+           // Event listener for search button
+const searchInput = document.getElementById("search-box");
+const searchButton = document.getElementById("search-button");
+searchButton.addEventListener("click", function () {
+    console.log("Search button clicked!");
+    const searchTerm = searchInput.value.trim().toLowerCase();
+    const filteredGames = allGames.filter((game) =>
+        game.name.toLowerCase().includes(searchTerm)
+    );
+    console.log("Filtered games:", filteredGames);
+    renderGames(filteredGames);
+});
+
 
             // Event listener for details buttons
             const detailsButtons = document.querySelectorAll(".btn.outline");
