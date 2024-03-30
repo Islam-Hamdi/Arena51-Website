@@ -10,10 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/auth.js" defer></script>
-    <script src="js/index.js" defer></script>
-    <script src="purchase.js" defer></script>  
-    <script src="js/purchase-history.js" defer></script>
-  
     <title>Purchase Page</title>
 </head>
 <body>
@@ -21,7 +17,6 @@
         <div class="container">
             <div class="logo">
                 <img src="images/logo.png" alt="Logo">
-
                 <div class="title">
                     <h1><span class="arena">Arena</span> <span class="number">51</span></h1>
                 </div>
@@ -39,7 +34,7 @@
             </div>
             <div class="account">
                 <div class="authenticated">
-                    <span class="account-username"></span> <!-- This is where the username will appear -->
+                    <span class="account-username"></span>
                     <button class="btn btn-danger" id="logout">Logout</button>
                 </div>
                 <div class="not-authenticated">
@@ -47,11 +42,10 @@
                     <a href="#" data-toggle="modal" data-target="#modalLogin">Login / Sign Up</a>
                 </div>
             </div>
-            </div>
             <div id="flash-container"></div>
-
         </div>
     </header>
+ 
     <main>
         <div class="game-details">
             <!-- Game details will be populated here -->
@@ -69,11 +63,11 @@
                 <textarea id="address" name="address" required></textarea><br>
                 <label for="zip">Zip Code:</label>
                 <input type="text" id="zip" name="zip" required><br>
-                <submit id="confirm-purchase-btn">Confirm Purchase</submit>
+                <button id="confirm-purchase-btn">Confirm Purchase</button>
             </form>
         </div>
     </main>
-
+ 
     <footer>
         <div class="footer-nav">
             <a href="#top"><i class="fas fa-arrow-up"></i> Back to Top</a>
@@ -109,6 +103,7 @@
             </div>
         </div>
     </footer>
+    <div id="overlay"></div>
     <!-- Login modal -->
 <div class="login-modal modal fade" id="modalLogin" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-sm" role="document">
@@ -117,19 +112,19 @@
                 <!-- <button type="button" class="close-button" data-dismiss="modal" aria-label="Close">
                     <span class="close-icon ion-android-close"></span>
                 </button>
-
+ 
                 <h3 class="modal-title mb-0">Sign In</h3> -->
-
-
+ 
+ 
                 <div class="modal-header">
                     <h3 class="modal-title mb-0">Sign In</h3>
                     <i class="close-button fas fa-times" data-dismiss="modal" aria-label="Close"></i>
                     <!-- <span class="close-icon ion-android-close"></span> -->
                     </button>
                 </div>
-
-
-
+ 
+ 
+ 
                 <div class="gap-1"></div>
                 <form action="#" class="login-form text-white" id="loginForm">
                     <div class="form-group">
@@ -149,5 +144,7 @@
         </div>
     </div>
 </div>
+<script src="js/purchase.js"></script>
+
 </body>
 </html>

@@ -29,6 +29,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     logout.addEventListener("click", function () {
       localStorage.removeItem("user");
+      localStorage.removeItem("game");
+      localStorage.removeItem("purchases_history");
+
+
       window.location.href = "Arena-51-Website.html"; // Redirect to main webpage
     });
   

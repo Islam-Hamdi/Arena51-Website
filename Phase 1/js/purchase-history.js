@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const currentUser = sessionStorage.getItem('username'); // Assuming you have stored the current user's username
 
-    const purchaseHistory = JSON.parse(localStorage.getItem('purchaseHistory')) || [];
+    const purchaseHistory = JSON.parse(localStorage.getItem('purchases_history')) || [];
     if (purchaseHistory && currentUser) {
         const userPurchaseHistory = purchaseHistory.filter(purchase => purchase.buyer === currentUser);
         const purchaseHistoryTable = document.getElementById('salesTable');
