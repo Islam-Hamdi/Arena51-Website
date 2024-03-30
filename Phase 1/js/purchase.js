@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // document.addEventListener("DOMContentLoaded", function () {
+    let games = JSON.parse(localStorage.getItem('games'));
 
   const flashContainer = document.getElementById("flash-container");
   function showFlashMessage(message, status) {
@@ -37,32 +38,57 @@ document.addEventListener("DOMContentLoaded", function () {
  
   purchaseForm.addEventListener("submit", function (event) {
     event.preventDefault();
+    
     const purchases_history = JSON.parse(localStorage.getItem("purchases_history")) || [];
     const quantity = parseInt(document.getElementById("quantity").value);
     const phoneNumber = document.getElementById("phone").value.trim();
     const address = document.getElementById("address").value.trim();
     const zipCode = document.getElementById("zip").value.trim();
+    
     if (quantity <= game.quantity) {
       user["phoneNumber"] = phoneNumber;
       user["address"] = address;
       user["zipCode"] = zipCode;
       game["quantity"] = quantity;
+      
+     
+     
+      
       const purchaseData = {
-          phone: phoneNumber,
-          address: address,
-          zip: zipCode,
-          itemName: game.name,
-          price: game.price,
-          quantity: quantity,
-         
+        phone: phoneNumber,
+        address: address,
+        zip: zipCode,
+        itemName: game.name,
+        price: game.price,
+        quantity: quantity,
       };
+      
       purchases_history.push(purchaseData);
       localStorage.setItem("purchases_history", JSON.stringify(purchases_history));
+      
+      // Update the game data in local storage
+      //  // Decrement the quantity attribute of the game
+      // game.quantity -= quantity;
+      // localStorage.setItem("games", JSON.stringify(game));
+
+// Find the index of the game with the corresponding ID
+const index = games.findIndex(g => g.id === game.id);
+
+// Check if the game exists in the games array
+if (index !== -1) {
+    // Update the quantity of the game
+    games[index].quantity -= quantity;
+    
+    // Save the updated games array back to the local storage
+    localStorage.setItem('games', JSON.stringify(games));
+} else {
+    console.error('Game not found in the local storage');
+}
       showFlashMessage("One Item is bought. Redirection to Purchases History", true);
+      
       setTimeout(() => {
         window.location.href = "purchases.html";
       }, 3000);
- 
     } else {
       showFlashMessage("There are no more items", false);
     }
