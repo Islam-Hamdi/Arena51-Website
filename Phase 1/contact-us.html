@@ -11,6 +11,7 @@
     <link rel="icon" type="image/x-icon" href="images/aliens (5).png">
     <script src="js/index.js" defer></script>
     <script src="js/home.js" defer></script>
+    <script src="js/auth.js" defer></script>
 
     <title>Arena 51</title>
 </head>
@@ -36,9 +37,17 @@
                 <button type="submit">Search</button>
             </div>
             <div class="account">
-                <i class="fas fa-user"></i>
-                <a href="#">Login / Sign Up</a>
+                <div class="authenticated">
+                    <span class="account-username"></span> <!-- This is where the username will appear -->
+                    <button class="btn btn-danger" id="logout">Logout</button>
+                </div>
+                <div class="not-authenticated">
+                    <i class="fas fa-user"></i>
+                    <a href="#" data-toggle="modal" data-target="#modalLogin">Login / Sign Up</a>
+                </div>
             </div>
+            </div>
+            <div id="flash-container"></div>
         </div>
     </header>
 

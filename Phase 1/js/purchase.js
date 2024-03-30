@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    document.addEventListener("DOMContentLoaded", function () {
+    // document.addEventListener("DOMContentLoaded", function () {
         const flashContainer = document.getElementById("flash-container");
         function showFlashMessage(message, status) {
           flashContainer.textContent = message;
@@ -66,5 +66,5 @@ document.addEventListener("DOMContentLoaded", function() {
             showFlashMessage("There are no more items", false);
           }
         });
-      });      
+      // });      
 });
