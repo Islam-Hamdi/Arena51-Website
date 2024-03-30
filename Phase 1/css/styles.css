@@ -441,30 +441,214 @@ main {
     display: flex;
     align-items: center;
 }
-/* Media queries for smaller screens */
-@media (max-width: 768px) {
-    footer {
-        display: flex;
-        flex-direction: column;
 
+/* For devices with a maximum width of 768px */
+@media only screen and (max-width: 768px) {
+
+
+    .container {
+        flex-direction: column; /* Change direction to vertical */
+        align-items: center; /* Align items to the center horizontally */
     }
-    .languages-region, .top-links {
-    /* display: flex; */
-    width: 100%;
-    justify-content: space-around;
-    text-align: center;
 
-    } 
+    .logo {
+        margin-bottom: 10px; /* Add space below the logo */
+    }
 
-    /* .footer-links a {
+    .title {
+        margin-bottom: 10px; /* Add space below the title */
+    }
+
+    nav ul {
+        flex-direction: column; /* Change direction to vertical */
+        margin-bottom: 10px;
+        align-items: center; /* Align items to the center horizontally */
+    }
+
+    nav ul li {
+        display: block; /* Change display to block */
+        margin: 10px 0; /* Add margin between items */
+        text-align: center; /* Align text to the center */
+    }
+
+    .search {
+        margin-top: 20px; 
+        margin-bottom: 20px; /* Add space below the search bar */
+    }
+
+    .account {
+        margin-top: 20px;
+        margin-bottom: 20px; /* Add space above the account links */
+    }
+  
+    .button-wrapper {
         display: flex;
-        direction: column;
+        flex-direction: column; /* Change to column direction */
+        justify-content: center; /* Center the buttons vertically */
+        margin-top: auto; /* Add margin to separate the buttons from the content */
+    }
+    .footer-nav {
+        flex-direction: column;
         align-items: center;
-    } */
+        text-align: center;
+    }
+    .footer-links ul li {
+        display: block;
+        padding: 10px;
+    }
+    /* Add spacing between footer links */
+    .footer-nav a {
+        margin: 5px 0;
+    }
 
+    /* Adjust social media icons */
+    .social-media {
+        margin-top: 20px; /* Add spacing */
+    }
+
+    /* Adjust languages-region */
+  
+.languages-region{
+    display: block;
+    margin-top: auto; 
+  
+    padding: 10px;
+
+
+}
+.region select {
+    margin-top: 10px;
+    align-self: center;
+}
     .social-media {
         margin-bottom: 10px;
     }
+    .button-wrapper {
+        display: flex;
+        flex-direction: column; /* Change to column direction */
+        justify-content: center; /* Center the buttons vertically */
+        margin-top: 30px; /* Add margin to separate the buttons from the content */
+        gap: 10px;
+    }
+    .container {
+        padding: 20px;
+    }
+
+    .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .card img {
+        width: 100%;
+    }
+
+    .categories {
+        display: flex;
+        padding:50px;
+        flex-direction: column;
+        gap: 20px;
+        justify-content: center;
+     
+        margin-top: 1rem;
+     
+    }
+    .category {
+        display: flex;
+        flex-direction: column;
+    }
+    .button-wrapper {
+        display: flex;
+        flex-direction: column; /* Change to column direction */
+        justify-content: center; /* Center the buttons vertically */
+        margin-top: auto; /* Add margin to separate the buttons from the content */
+    }
+
+
+
+
+
+    /*contactt us page*/
+
+    .contact-us {
+        padding: 10px; /* Adjust padding for smaller screens */
+        margin-top: 50px; /* Adjust margin for smaller screens */
+    }
+
+    .contact-us form {
+        max-width: 100%; /* Set maximum width for the form */
+    }
+
+    .contact-us form div {
+        margin-bottom: 10px; /* Adjust margin between form elements */
+    }
+
+    .contact-us form input[type="text"],
+    .contact-us form input[type="email"],
+    .contact-us form textarea {
+        width: 100%; /* Set input fields to full width */
+    }
+
+    .contact-us form button[type="submit"] {
+        width: 100%; /* Set button to full width */
+    }
+
+    .map-container {
+        width: 100%; /* Set map container to full width */
+    }
+
+    .map-container iframe {
+        width: 100%; /* Set map iframe to full width */
+        height: 300px; /* Adjust map height */
+    }
+
+    .about-us-container {
+        flex-direction: column; /* Adjust layout for smaller screens */
+    }
+
+    .team-info {
+        width: 100%; /* Set team info to full width */
+        margin-top: 20px; /* Add margin between map and team info */
+    }
+
+
+    .game-details{
+        display: flex;
+        flex-direction: column;
+        text-align: none;
+    }
+
+
+    .table th,
+    .table td {
+        font-size: 12px; /* Adjust font size for better readability */
+        padding: 6px; /* Adjust padding for better spacing */
+    }
+
+
+    .purchase-history-element {
+        flex-direction: column; /* Display elements in a column */
+    }
+    .game-details .game {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .game-details .game img {
+        max-width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}
+#add-to-cart{
+   padding: 10px;
+    background-color: #68C301; /* Adjust the background color as needed */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1000;
 }
 
 /* @media (min-width: 768px) {
@@ -529,14 +713,31 @@ main {
 .button-64:hover span {
   background: none;
 }
- 
-@media (min-width: 768px) {
-  .button-64 {
-    font-size: 24px;
-    min-width: 196px;
+ /* Media queries for responsive design */
+
+/* For devices with a maximum width of 768px */
+@media only screen and (max-width: 768px) {
+    .container {
+      padding: 20px;
+    }
+  
+    .card {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .card img {
+      width: 100%;
+    }
+    .category {
+        display: flex;
+    flex-direction: column;
+      }
   }
-}
+  
+  /* For devices with a maximum width of 576px */
  
+  
 .games-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -857,15 +1058,9 @@ main {
 }
 
 
+/* Media queries for responsive design */
 
-@media screen and (max-width: 600px) {
-    input[type="text"],
-    input[type="number"] {
-        width: 100%;
-    }
-}
-/* Modal styling */
-
+/* For devices with a maximum width of 768px */
 
 .modal .modal-dialog {
     max-width: 400px;

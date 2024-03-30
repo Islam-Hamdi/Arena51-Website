@@ -441,3 +441,38 @@ footer {
     display: flex;
     align-items: center;
 }
+/* Responsive styles for mobile screens */
+@media only screen and (max-width: 600px) {
+    main {
+        flex-direction: column; /* Stack form and preview vertically */
+        align-items: center; /* Center content horizontally */
+    }
+
+    form,
+    .preview-container {
+        width: 100%; /* Make form and preview container full width */
+    }
+
+    /* Adjust margin for better spacing */
+    .form-group,
+    label {
+        margin-bottom: 10px;
+    }
+
+    /* Adjust padding for better spacing */
+    input[type="text"],
+    input[type="number"],
+    input[type="file"] {
+        padding: 8px;
+    }
+
+    /* Increase font size for better readability */
+    label {
+        font-size: 14px;
+    }
+
+    /* Make image preview appear under the form elements */
+    .preview-container {
+        margin-top: 10px;
+    }
+}
