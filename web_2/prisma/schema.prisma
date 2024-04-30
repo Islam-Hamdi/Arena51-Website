@@ -1,0 +1,67 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       Int        @id @default(autoincrement())
+  username String     @unique
+  email    String?
+  password String
+  Admin    Admin[]
+  Customer Customer[]
+  Seller   Seller[]
+}
+
+model Admin {
+  id     Int  @id @default(autoincrement())
+  userId Int  @unique
+  user   User @relation(fields: [userId], references: [id])
+}
+
+model Customer {
+  id      Int   @id @default(autoincrement())
+  userId  Int   @unique
+  user    User  @relation(fields: [userId], references: [id])
+  balance Float
+}
+
+model Seller {
+  id          Int           @id @default(autoincrement())
+  userId      Int           @unique
+  user        User          @relation(fields: [userId], references: [id])
+  SellerGames SellerGames[]
+}
+
+model SellerGames {
+  id               Int                @id @default(autoincrement())
+  name             String
+  image            String
+  description      String?
+  price            Float
+  quantity         Int
+  sellerId         Int
+  seller           Seller             @relation(fields: [sellerId], references: [id])
+  Categories_Games Categories_Games[]
+}
+
+model Categories {
+  id               Int                @id @default(autoincrement())
+  name             String             @unique
+  Categories_Games Categories_Games[]
+}
+
+model Categories_Games {
+  id            Int         @id @default(autoincrement())
+  sellerGamesId Int
+  sellerGames   SellerGames @relation(fields: [sellerGamesId], references: [id])
+  categoriesId  Int
+  categories    Categories  @relation(fields: [categoriesId], references: [id])
+}

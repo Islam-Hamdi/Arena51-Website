@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const slideElement = document.createElement("div");
             slideElement.classList.add("slide");
             slideElement.style.backgroundImage = `url(${slide.image})`;
-
+            
             slideElement.innerHTML = `
                 <div class="slide-content">
                     <p>${slide.text}</p>
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // Automatic slide transition
-        setInterval(nextSlide, 5000); // Change slide every 5 seconds
+        // setInterval(nextSlide, 5000); // Change slide every 5 seconds
     }
 
     // Fetch JSON data for games

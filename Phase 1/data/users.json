@@ -12,7 +12,7 @@
       "email": "islam@gmail.com",
       "password" : "islam01",
       "userType" : "Customer",
-      "balance" : "1"
+      "balance" : "0"
     }
 
   ,{
@@ -21,7 +21,7 @@
     "email": "najlaa@gmail.com",
     "password" : "najlaa03",
     "userType" : "Customer",
-    "balance" : "2000"
+    "balance" : "200"
 
   }
   ,{
