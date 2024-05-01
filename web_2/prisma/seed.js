@@ -1,66 +1,50 @@
-import { PrismaClient } from "@prisma/client";
-const prisma = new PrismaClient();
+import fs from 'fs-extra'
+import path from 'path'
+import { PrismaClient } from '@prisma/client'
+
+const prisma = new PrismaClient()
+
+const gamesPath = path.join(process.cwd(), 'app/data/games.json')
+const categoriesPath = path.join(process.cwd(), 'app/data/categories.json')
+const usersPath = path.join(process.cwd(), 'app/data/users.json')
 
 async function seed() {
-  await prisma.user.create({
-    data: {
-      username: "admin",
-      email: "admin@gmail.com",
-      password: "admin",
-      Admin: { create: [{}] },
-    },
-  });
-  const FPS_cat = await prisma.Categories.create({
-    data: {
-      name: "FPS",
-    },
-  });
-  const RPG_cat = await prisma.Categories.create({
-    data: {
-      name: "RPG",
-    },
-  });
-  await prisma.user.create({
-    data: {
-      username: "Fatma",
-      email: "fatma@gmail.com",
-      password: "fatma123",
-      Seller: {
-        create: [
-          {
-            SellerGames: {
-              create: [
-                {
-                  name: "Cyberpunk 2077",
-                  image: "images/cyberPunk.webp",
-                  description: "RPG game of the year 2024",
-                  price: 60,
-                  quantity: 5,
-                  Categories_Games: {
-                    create: [
-                      {
-                        categoriesId: FPS_cat.id,
-                      },
-                      {
-                        categoriesId: RPG_cat.id,
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-  });
-  await prisma.user.create({
-    data: {
-      username: "islam",
-      email: "islam@gmail.com",
-      password: "islam01",
-      Customer: { create: [{ balance: 1000 }] },
-    },
+    try {
+        // Read JSON files
+        const users = await fs.readJSON(usersPath)
+        const games = await fs.readJSON(gamesPath)
+        const categories = await fs.readJSON(categoriesPath)
+
+        
+        // Create games
+// Create games
+for (const game of games) {
+  await prisma.game.create({ 
+      data: {
+          ...game,
+          seller: {
+              connect: { userId: game.sellerId } // Connect the game to its seller
+          }
+      }
   });
 }
-seed();
+// Iterate over users and create each user
+for (const user of users) {
+  // Remove the id field from the user data
+  const { id, ...userData } = user;
+  await prisma.user.create({ data: userData });
+}
+
+        // Create categories
+        for (const category of categories) {
+            await prisma.category.create({ data: category });
+        }
+
+        console.log('Successfully seeded');
+    } catch (error) {
+        console.log(error);
+        return { error: error.message }
+    } 
+}
+
+await seed();

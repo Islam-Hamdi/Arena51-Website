@@ -1,0 +1,67 @@
+[
+  {
+    "id": "88",
+    "username": "islam",
+    "email": "islam@gmail.com",
+    "password": "islam01",
+    "userType": "Customer",
+    "balance": 0.0,
+    "phoneNumber": "123456789",
+    "games": ["1", "2"]
+},
+  {
+      "id": "1",
+      "username": "admin",
+      "email": "admin@gmail.com",
+      "password": "admin",
+      "userType": "Admin"
+  },
+  {
+      "id": "2",
+      "username": "islam",
+      "email": "islam@gmail.com",
+      "password": "islam01",
+      "userType": "Customer",
+      "balance": 0.0,
+      "phoneNumber": "123456789",
+      "games": ["1", "2"]
+  },
+  {
+      "id": "3",
+      "username": "Najlaa",
+      "email": "najlaa@gmail.com",
+      "password": "najlaa03",
+      "userType": "Customer",
+      "balance": 200.0,
+      "phoneNumber": "987654321", 
+      "games": []
+  },
+  {
+      "id": "4",
+      "username": "rain",
+      "email": "rain@gmail.com",
+      "password": "rain01",
+      "userType": "Customer",
+      "balance":1000.5,
+      "phoneNumber": "456123789",  
+      "games": []
+  },
+  {
+      "id": "5",
+      "username": "Fatma",
+      "email": "fatma@gmail.com",
+      "password": "fatma123",
+      "userType": "Seller",
+      "phoneNumber": "789123456",  
+      "games": []
+  },
+  {
+      "id": "6",
+      "username": "Mariam",
+      "email": "mariam@gmail.com",
+      "password": "mariam321",
+      "userType": "Seller",
+      "phoneNumber": "654789123",  
+      "games": []
+  }
+]
