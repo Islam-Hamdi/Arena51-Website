@@ -1,0 +1,91 @@
+[
+    {
+        "id": 1,
+        "name": "Street Fighter 6",
+        "categories": [
+            "Fighting"
+        ],
+        "image": "images/StreetFighter.jpeg",
+        "description": "Fighting game of the year 2024",
+        "price": 50,
+        "quantity": 10
+    },
+    {
+        "id": 2,
+        "name": "Cyberpunk 2077",
+        "categories": [
+            "RPG",
+            "FPS"
+        ],
+        "image": "images/cyberPunk.webp",
+        "description": "RPG game of the year 2024",
+        "price": 60,
+        "quantity": 5
+    },
+    {
+        "id": 3,
+        "name": "Baldur Gate 3",
+        "categories": [
+            "RPG"
+        ],
+        "image": "images/Baldur'sGate.jpg",
+        "description": "Game of the year 2024",
+        "price": 60,
+        "quantity": 8
+    },
+    {
+        "id": 4,
+        "name": "Valorant",
+        "categories": [
+            "FPS"
+        ],
+        "image": "images/Valorant.jpg",
+        "description": "5v5 character-based tactical",
+        "price": 0,
+        "quantity": 15
+    },
+    {
+        "id": 5,
+        "name": "Tekken 8",
+        "categories": [
+            "Fighting"
+        ],
+        "image": "images/Tekken-8.jpg",
+        "description": "best Sony PlayStation game award",
+        "price": 60,
+        "quantity": 3
+    },
+    {
+        "id": 6,
+        "name": "Overwatch 2",
+        "categories": [
+            "FPS"
+        ],
+        "image": "images/overwatch-2.jpg",
+        "description": "Winner Webby Award",
+        "price": 0,
+        "quantity": 20
+    },
+    {
+        "id": 7,
+        "name": "Starfield",
+        "categories": [
+            "RPG"
+        ],
+        "image": "images/starfield.webp",
+        "description": "2023 Winner Golden Joystick Award",
+        "price": 70,
+        "quantity": 12
+    },
+    {
+        "id": 8,
+        "name": "Call of Duty: Modern Warfare 2",
+        "categories": [
+            "FPS"
+        ],
+        "image": "images/Call-of-Duty-Modern-Warfare-2.webp",
+        "description": "IGN Select Award for Best PC Game",
+        "price": 40,
+        "quantity": 6
+    }
+]
