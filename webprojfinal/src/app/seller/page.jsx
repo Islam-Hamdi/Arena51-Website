@@ -71,7 +71,7 @@ const Seller = () => {
 
 
 
-    // console.log(user.user.userId, "🤯🙌")
+  
 
     return (
         <main>
@@ -111,7 +111,7 @@ const Seller = () => {
                             <CldImage
                                 width="968"
                                 height="600"
-                                src={`https://res.cloudinary.com/${cloud_name}/image/upload/${imageId}`}
+                                src={`${imageId}`}
                                 sizes="100vw"
                                 alt="Description"
                             />
