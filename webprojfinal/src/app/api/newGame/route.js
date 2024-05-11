@@ -4,10 +4,10 @@ import { NextResponse } from "next/server";
 export async function POST(req) {
   try {
     const body = await req.json();
-    const { name, description, categories, price, quantity, image, user } =
+    const { name, description, categories, price, quantity,sellerId, image, user } =
       body;
 
-    // Extract username from the user object
+    
     const parsedPrice = parseFloat(price);
     const parsedQuantity = parseInt(quantity, 10);
 
@@ -19,6 +19,7 @@ export async function POST(req) {
         categories,
         price: parsedPrice,
         quantity: parsedQuantity,
+        sellerId,
         image,
         gameId: generateGameId(),
       },
