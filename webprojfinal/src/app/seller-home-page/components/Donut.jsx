@@ -1,29 +1,29 @@
 import { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
-
+ 
 const DonutChart = () => {
   const [chartData, setChartData] = useState({
     series: [],
     labels: [],
   });
-
+ 
   useEffect(() => {
     fetchGames();
   }, []);
-
+ 
   const fetchGames = async () => {
     try {
       const response = await fetch("api/gamesListings");
       if (response.ok) {
         const data = await response.json();
-
+ 
         const totalGames = data.length;
         const freeGames = data.filter((game) => game.price === 0).length;
         const paidGames = totalGames - freeGames;
-
+ 
         const series = [freeGames, paidGames];
         const labels = ["Free Games", "Paid Games"];
-
+ 
         setChartData({ series, labels });
       } else {
         console.error("Failed to fetch game listings");
@@ -32,9 +32,9 @@ const DonutChart = () => {
       console.error("An error occurred while fetching games:", error);
     }
   };
-
+ 
   const { series, labels } = chartData;
-
+ 
   const chartOptions = {
     series,
     labels,
@@ -46,7 +46,10 @@ const DonutChart = () => {
       type: "donut",
       height: 350,
       toolbar: {
-        show: false,
+        show: true,
+      },
+      zoom: {
+        enabled: true,
       },
       background: "black",
     },
@@ -68,12 +71,12 @@ const DonutChart = () => {
       shared: false,
       y: {
         formatter: function (val) {
-          return val + " games"; 
+          return val + " games";
         },
       },
     },
   };
-
+ 
   return (
     <Chart
       options={chartOptions}
@@ -83,5 +86,5 @@ const DonutChart = () => {
     />
   );
 };
-
+ 
 export default DonutChart;

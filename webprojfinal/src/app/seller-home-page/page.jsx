@@ -5,10 +5,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import { useUser } from "../context/UserContext"
 
 const Seller = () => {
     // const limitedData = data.slice(0, 4);
     const [games, setGames] = useState([]);
+    const user = useUser()
     const router = useRouter();
 
 
@@ -22,7 +24,9 @@ const Seller = () => {
             const response = await fetch("api/gamesListings");
             if (response.ok) {
                 const data = await response.json();
-                setGames(data);
+                // Filter games based on userId
+                const filteredGames = data.filter(game => game.sellerId === user.userId);
+                setGames(filteredGames);
             } else {
                 console.error("Failed to fetch games");
             }

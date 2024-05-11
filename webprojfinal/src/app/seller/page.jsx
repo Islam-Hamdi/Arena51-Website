@@ -63,7 +63,7 @@ const Seller = () => {
             const data = await response.json();
             console.log('New game added:', data);
 
-            router.push('/seller-home-page')
+            router.push(`/seller-home-page/${user.user.userId}`)
         } catch (error) {
             console.error('Error adding game:', error);
         }

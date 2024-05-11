@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
-
+ 
 const BarChart = () => {
     const [chartOptions, setChartOptions] = useState({
         series: [
@@ -20,10 +20,10 @@ const BarChart = () => {
             type: "bar",
             height: 350,
             toolbar: {
-                show: false,
+                show: true,
             },
             zoom: {
-                enabled: false,
+                enabled: true,
             },
             background: 'black', // Set background color
             color: "black"
@@ -49,11 +49,11 @@ const BarChart = () => {
             },
         },
     });
-
+ 
     useEffect(() => {
         fetchPurchase();
     }, []);
-
+ 
     const fetchPurchase = async () => {
         try {
             const response = await fetch("api/purchase");
@@ -64,7 +64,7 @@ const BarChart = () => {
             console.error("Error fetching purchase data:", error);
         }
     };
-
+ 
     const formatData = (data) => {
         // Format data to match the structure expected by the chart component
         const monthlySales = Array.from({ length: 8 }, () => 0); // Initialize array with 0 for each month
@@ -74,7 +74,7 @@ const BarChart = () => {
         });
         return monthlySales;
     };
-
+ 
     const updateChartOptions = (data) => {
         // Update chart options with the formatted data
         setChartOptions(prevOptions => ({
@@ -82,7 +82,7 @@ const BarChart = () => {
             series: [{ data }]
         }));
     };
-
+ 
     return (
         <Chart
             options={chartOptions}
@@ -92,5 +92,5 @@ const BarChart = () => {
         />
     );
 };
-
-export default BarChart;
+ 
+export default BarChart

@@ -166,7 +166,7 @@ const Header = () => {
                         <ul>
                             {user && user.userType === "Seller" ? (
                                 <><li>
-                                    <a href="/seller-home-page">Seller Home Page</a>
+                                    <a href={`/seller-home-page/${user.userId}`}>Seller Home Page</a>
                                 </li>
                                     <li>
                                         <a href="/seller">Add New Game</a>

@@ -1,36 +1,36 @@
 import { useState, useEffect } from "react";
 import Chart from "react-apexcharts";
-
-const LineChart = () => {
+ 
+const CategoryLineChart = () => {
     const [chartData, setChartData] = useState({
         series: [],
         labels: [],
     });
-
+ 
     useEffect(() => {
-        fetchPrices();
+        fetchCategories();
     }, []);
-
-    const fetchPrices = async () => {
+ 
+    const fetchCategories = async () => {
         try {
-            const response = await fetch("api/gamesListings"); // Assuming this endpoint returns game prices
+            const response = await fetch("api/gamesListings");
             if (response.ok) {
                 const data = await response.json();
-                console.log(data.map((game) => game.price));
-
-                const prices = data.map((game) => game.price);
-                const labels = data.map((game) => game.title);
-
-                setChartData({ series: [{ data: prices }], labels });
+                const categories = [...new Set(data.map((game) => game.categories))];
+                const series = categories.map((category) =>
+                    data.filter((game) => game.categories === category).length
+                );
+                setChartData({ series, labels: categories });
             } else {
-                console.error("Failed to fetch game prices");
+                console.error("Failed to fetch game listings");
             }
         } catch (error) {
-            console.error("An error occurred while fetching prices:", error);
+            console.error("An error occurred while fetching categories:", error);
         }
     };
-
+ 
     const { series, labels } = chartData;
+ 
     const chartOptions = {
         colors: ['#79e200'], // Setting line color to green
         sparkline: {
@@ -46,10 +46,10 @@ const LineChart = () => {
             type: "line",
             height: 350,
             toolbar: {
-                show: false,
+                show: true,
             },
             zoom: {
-                enabled: false,
+                enabled: true,
             },
             background: "black",
         },
@@ -58,33 +58,31 @@ const LineChart = () => {
         },
         yaxis: {
             title: {
-                text: "Price",
+                text: "Number of Games",
             },
+            min: 0, // Set the minimum value for the y-axis
+            forceNiceScale: true, // Ensure y-axis displays only integer values
         },
         xaxis: {
             type: "category",
-            
+            categories: labels,
         },
         tooltip: {
             shared: false,
             y: {
-                formatter: (val) => `$${val.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, "$&,")}`,
+                formatter: (val) => `${val} games`,
             },
         },
     };
-
+   
     return (
-        <>
-            {(typeof window !== 'undefined') &&
-                <Chart
-                    options={chartOptions}
-                    series={series}
-                    type="line"
-                    height={chartOptions.chart.height}
-                />
-            }
-        </>
+        <Chart
+            options={chartOptions}
+            series={[{ data: series }]}
+            type="line"
+            height={chartOptions.chart.height}
+        />
     );
 };
-
-export default LineChart;
+ 
+export default CategoryLineChart;
