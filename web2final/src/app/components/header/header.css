@@ -1,0 +1,301 @@
+header {
+  background-color: hsl(162, 58%, 0%);
+  color: #c5c6c7;
+  /* padding: 10px 0;  */
+  /* position: fixed; */
+  width: 100%;
+  top: 0; /* Position the header at the top of the viewport */
+}
+
+.not-authenticated {
+  gap: 10px;
+}
+
+.logo {
+  display: flex;
+  gap: 1rem;
+}
+
+.title {
+  align-self: center;
+}
+.logo img {
+  width: 100px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.title h1 {
+  margin: 0;
+  font-family: Poppins;
+  /* font-family: 'Namum Gothic Coding'; */
+  font-size: 35px;
+  color: #ffffff; /* Title color set to white */
+  margin-left: 10px; /* Adjust the margin to bring it closer to the logo */
+  .arena {
+    color: #ffffff; /* Color for "Arena" */
+  }
+
+  .number {
+    color: #68c301; /* Color for "51" */
+  }
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav ul li:last-child {
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: #c5c6c7;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #68c301;
+}
+
+.spcailnav {
+  padding: 5px;
+  background-color: #68c301;
+  color: #1b3d00;
+}
+.spcailnav:hover {
+  color: #ffffff;
+}
+
+.search input[type="text"] {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  margin-right: 10px;
+  background-color: rgb(27, 61, 0);
+  color: #c5c6c7;
+}
+
+.search button {
+  padding: 8px 16px;
+  background-color: rgb(104, 195, 1);
+  border: none;
+  border-radius: 4px;
+  color: black;
+  cursor: pointer;
+}
+
+.search button:hover {
+  background-color: #68c301;
+}
+
+/* .account {
+   
+  } */
+.account a {
+  color: #c5c6c7; /* Account link color */
+  text-decoration: none;
+  /* border:rgb(104, 195, 1); */
+}
+
+.account a:hover {
+  text-decoration: underline;
+}
+.modal .modal-dialog {
+  max-width: 400px;
+  margin: auto;
+  background-color: #07090a;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(104, 195, 1, 0.3);
+}
+
+.modal .modal-body {
+  padding: 20px;
+}
+
+.modal .modal-body h3 {
+  color: #68c301;
+}
+
+.modal .modal-body .form-group {
+  margin-bottom: 15px;
+}
+
+.modal .modal-body .form-control {
+  width: calc(100% - 20px); /* Adjust the width as needed */
+  padding: 10px;
+  border: 1px solid #1b3d00;
+  background-color: #1b3d00;
+  border-radius: 5px;
+}
+
+.modal .modal-body .login-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #68c301;
+  color: #fff;
+}
+
+.modal .modal-body .login-btn:hover {
+  color: #07090a;
+}
+/* Style for login form input fields when focused */
+.modal .modal-body .form-control:focus {
+  outline: none; /* Remove default focus outline */
+  border-color: #68c301; /* Change border color when focused */
+  box-shadow: 0 0 5px rgba(104, 195, 1, 0.5); /* Add box shadow when focused */
+}
+
+/* Show the modal when it's active */
+.modal-active {
+  display: block !important; /* Important to override default display value */
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  z-index: 9998; /* Ensure the overlay is behind the modal */
+}
+
+.modal .modal-body a {
+  color: #c5c6c7; /* Change the color to your desired color */
+  text-decoration: underline; /* Optionally, you can add underline */
+}
+
+.modal .modal-body a:hover {
+  color: #fff; /* Change the color of the links on hover */
+}
+
+#flash-container {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  background-color: #f44336; /* Red color */
+  color: #fff; /* White text */
+  border-radius: 5px;
+  z-index: 9999;
+}
+/* Style for modal header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 10px 20px; */
+  margin-bottom: 1.5rem;
+}
+
+/* Style for close button */
+.close-button {
+  background: none;
+  align-content: center;
+  border: none;
+  cursor: pointer;
+  color: #68c301;
+}
+
+.close-icon {
+  font-size: 24px;
+  color: #fff; /* Adjust color as needed */
+}
+
+.close-icon:hover {
+  color: #ff0000; /* Change color on hover if needed */
+}
+
+/* Style for the sign-up modal container */
+.modalSignup {
+  display: none; /* Initially hide the modal */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #07090a; /* Background color */
+  color: #c5c6c7; /* Text color */
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 9999; /* Ensure the modal stays on top of other elements */
+}
+
+/* Style for the sign-up modal title */
+.modalSignup h3 {
+  color: #68c301; /* Title color */
+  margin-bottom: 20px; /* Add some space below the title */
+}
+
+/* Style for the input fields in the sign-up form */
+.modalSignup input[type="text"],
+.modalSignup input[type="email"],
+.modalSignup input[type="password"] {
+  width: 100%; /* Take up full width */
+  padding: 10px; /* Add padding */
+  margin-bottom: 10px; /* Add space between input fields */
+  border: 1px solid #1b3d00; /* Border color */
+  background-color: #1b3d00; /* Background color */
+  color: #c5c6c7; /* Text color */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Style for the sign-up button */
+.modalSignup .signup-btn {
+  width: 100%; /* Take up full width */
+  padding: 10px; /* Add padding */
+  background-color: #68c301; /* Button background color */
+  color: #fff; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Add pointer cursor on hover */
+}
+
+/* Style for the sign-up button on hover */
+.modalSignup .signup-btn:hover {
+  background-color: #1b3d00; /* Darker background color */
+}
+
+/* Style for the close button */
+.modalSignup .close-button {
+  position: absolute; /* Position the button */
+  top: 10px; /* Add space from the top */
+  right: 10px; /* Add space from the right */
+  color: #68c301; /* Button color */
+  background: none; /* Transparent background */
+  border: none; /* Remove border */
+  cursor: pointer; /* Add pointer cursor on hover */
+}
+
+.modalSignup.active {
+  display: block;
+}
+
+/* Add more styles for the content inside the sign-up modal as needed */
+
+/* Position the modals */
+.modal {
+  background-color: #07090a;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: transform 0.5s ease; /* Add transition effect for sliding animation */
+  z-index: 9999;
+  left: 50%;
+  color: #07090a;
+}
+
+/* Slide the modals to the center when active */
+.modal-active {
+  left: 50%; /* Center the modal */
+  /* transform: translateX(-50%); */
+}

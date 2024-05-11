@@ -1,0 +1,56 @@
+[
+    {
+        "userId": "1",
+        "username": "Fatma",
+        "email": "fatma@gmail.com",
+        "phoneNumber": "123456789",
+        "password": "fatma123",
+        "userType": "Seller",
+        "balance": 0.00
+    },
+    {
+        "userId": "2",
+        "username": "Mariam",
+        "email": "mariam@gmail.com",
+        "phoneNumber": "987654321",
+        "password": "mariam321",
+        "userType": "Seller",
+        "balance": 0.00
+    },
+    {
+        "userId": "3",
+        "username": "Najlaa",
+        "email": "najlaa@gmail.com",
+        "phoneNumber": "555123456",
+        "password": "najlaa03",
+        "userType": "Customer",
+        "balance": 200.00
+    },
+    {
+        "userId": "4",
+        "username": "rain",
+        "email": "rain@gmail.com",
+        "phoneNumber": "555987654",
+        "password": "rain01",
+        "userType": "Customer",
+        "balance": 1000.00
+    },
+    {
+        "userId": "5",
+        "username": "admin",
+        "email": "admin@gmail.com",
+        "phoneNumber": "555555555",
+        "password": "admin",
+        "userType": "Admin",
+        "balance": 0.00
+    },
+    {
+        "userId": "6",
+        "username": "islam",
+        "email": "islam@gmail.com",
+        "phoneNumber": "555666777",
+        "password": "islam01",
+        "userType": "Customer",
+        "balance": 0.00
+    }
+]

@@ -1,0 +1,375 @@
+.seller__home{
+  overflow-y: auto;
+}
+
+.seller-title{
+    /*   align-items: center;
+       align-self: center;
+      
+       font-family: sans-serif;
+       font-weight: 1000;
+     margin-left: 400px;
+       font-size: 36px; /* Adjust the value as needed */
+       font-family: 'Luckiest Guy', cursive;
+       text-transform: uppercase;
+       font-size: 50px;
+       line-height: 1;
+       margin: 0;
+       letter-spacing: 0.075ch;
+       color: #68C301;
+       text-align: center;
+       --light-pos-x: 1; /* left: -1, center: 0, right: 1 */
+       --light-pos-y: -1; /* top: -1, center: 0, bottom: 1 */
+      
+       --rim-size: .02ch;
+       --shadow-offset: .2ch;
+       --shadow-blur: .1ch;
+       text-shadow:
+         calc(max(var(--rim-size), 1px) * var(--light-pos-x)) calc(max(var(--rim-size), 1px) * var(--light-pos-y)) #1B3D00,
+         calc(max(var(--rim-size), 1px) * var(--light-pos-x) * -1) calc(max(var(--rim-size), 1px) * var(--light-pos-y) * -1) #1B3D00,
+         calc(var(--shadow-offset) * var(--light-pos-x) * -1) calc(var(--shadow-offset) * var(--light-pos-y) * -1) var(--shadow-blur) #1B3D00
+      
+   }
+   .quantity-wrapper{
+       background-color: rgba(27, 61, 0, 0.8);
+       color: #79e200;
+       border-radius: 80px;
+       margin-top: 7px;
+      width: 90%;
+   align-self: center;
+   margin-left: 15px;
+   }
+    
+    
+   .sell-new-game-btn {
+    
+       margin-left: 70rem;
+       margin-top: 20px;
+       padding: 10px 20px;
+       background-color: #68C301; /* Adjust the background color as needed */
+       color: white;
+       border: none;
+       border-radius: 5px;
+       font-size: 16px;
+       cursor: pointer;
+       z-index: 1000; /* Ensure the button stays on top of other elements */
+   }
+    
+   .sell-new-game-btn:hover {
+       background-color: #1B3D00; /* Adjust the hover background color as needed */
+   }
+    
+    
+   .price {
+       position: absolute;
+       top: 10px;
+       right: 10px;
+       background-color: rgba(27, 61, 0, 0.8);
+       color: #79e200;
+       padding: 5px 10px;
+       border-radius: 20px;
+       display: none; /* Initially hide the price */
+   }
+    
+   .games:hover .price {
+       display: block; /* Display price on hover */
+   }
+   .categories {
+    display: flex;
+    padding: 50px;
+    justify-content: center;
+  
+    margin-top: 1rem;
+  }
+  
+  /* CSS */
+  .button-64 {
+    align-items: center;
+    background-image: linear-gradient(144deg, #1b3d00, #68c301 50%, rgb(0, 0, 0));
+    border: 0;
+    border-radius: 8px;
+    box-shadow: #68c301 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    font-family: Phantomsans, sans-serif;
+    font-size: 20px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+  
+    margin: 0px 20px;
+  }
+  .games {
+      position: relative; /* Add position relative to position the price */
+      cursor: pointer;
+    }
+    
+    .price {
+      display: none; /* Initially hide the price */
+      position: absolute; /* Position the price absolutely */
+      top: 10px; /* Adjust top position as needed */
+      right: 10px; /* Adjust right position as needed */
+      background-color: #1b3d00d8;
+      border-radius: 20px;
+      color: #68c301;
+      width: 50px;
+      font-size: 16px;
+      padding: 8px 0;
+      /* margin-top: -8px; */
+    }
+    
+    .games:hover .price {
+      display: block; /* Show the price when hovering over the .games container */
+    }
+  .button-64:active,
+  .button-64:hover {
+    outline: 0;
+  }
+  
+  .button-64 span {
+    background-color: #1b3d00;
+    padding: 3px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+  }
+  
+  .button-64:hover span {
+    background: none;
+  }
+  .games-wrapper {
+    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    
+  }
+  
+  .games {
+    display: flex;
+    flex-direction: column; /* Change to column direction */
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.25);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 20px; /* Adjust padding for the card */
+    filter: drop-shadow(0 30px 10px rgba(0, 0, 0, 0.125));
+    text-align: center;
+    margin-top: 1rem; /* Add margin to separate cards */
+    width: 250px; /* Set fixed width for each card */
+    height: 400px; /* Set fixed height for each card */
+  }
+  
+  .mywrapper {
+    width: 100%;
+    flex-grow: 1; /* Allow the wrapper to grow and take up remaining space */
+  }
+  
+  .image-container {
+    width: 100%;
+    height: 15rem; /* Set the height of the image container */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; /* Center the background image */
+    border-radius: 4px;
+    overflow: hidden; /* Hide overflow to only show the center of the image */
+  }
+  
+  .banner-image {
+    background-position: center;
+    background-size: cover;
+    height: 100%; /* Adjust the height of the banner image */
+    width: 100%;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.255);
+  }
+  
+  h2 {
+    /* font-family: 'Righteous', sans-serif; */
+    color: rgba(255, 255, 255, 0.98);
+    text-transform: uppercase;
+    font-size: 1.2rem; /* Adjust the font size */
+    margin-top: 20px; /* Add margin to separate title */
+  }
+  
+  p {
+    color: #fff;
+    font-family: "Lato", sans-serif;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 150%;
+    letter-spacing: 2px;
+    /* text-transform: uppercase; */
+    margin-top: 10px; /* Add margin to separate paragraph */
+  }
+  .button-wrapper {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    margin-top: auto; /* Add margin to separate the buttons from the content */
+  }
+  
+  .btn {
+    border: none;
+    padding: 12px 24px;
+    border-radius: 24px;
+    font-size: 12px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  
+  .btn + .btn {
+    margin-left: 10px;
+  }
+  
+  .outline {
+    background: transparent;
+    color: #68c301;
+    border: 1px solid #1b3d00;
+    transition: all 0.3s ease;
+  }
+  
+  .outline:hover {
+    transform: scale(1.125);
+    color: rgba(255, 255, 255, 0.9);
+    border-color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+  }
+  
+  .fill {
+    background: #68c301;
+    color: rgba(255, 255, 255, 0.95);
+    filter: drop-shadow(0);
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  
+  .fill:hover {
+    transform: scale(1.125);
+    border-color: rgba(255, 255, 255, 0.9);
+    filter: drop-shadow(0 10px 5px rgba(0, 0, 0, 0.125));
+    transition: all 0.3s ease;
+  }
+  
+  /*button for offers*/
+  /* <button class="button-49" role="button">Button 49</button> */
+  
+  /* CSS */
+  .button-49,
+  .button-49:after {
+    width: 150px;
+    height: 76px;
+    line-height: 78px;
+    font-size: 20px;
+    font-family: "Bebas Neue", sans-serif;
+    background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
+    border: 0;
+    color: #fff;
+    letter-spacing: 3px;
+    box-shadow: 6px 0px 0px #00e6f6;
+    outline: transparent;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
+  
+  .button-49:after {
+    --slice-0: inset(50% 50% 50% 50%);
+    --slice-1: inset(80% -6px 0 0);
+    --slice-2: inset(50% -6px 30% 0);
+    --slice-3: inset(10% -6px 85% 0);
+    --slice-4: inset(40% -6px 43% 0);
+    --slice-5: inset(80% -6px 5% 0);
+  
+    content: "ALTERNATE TEXT";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      45deg,
+      transparent 3%,
+      #00e6f6 3%,
+      #00e6f6 5%,
+      #ff013c 5%
+    );
+    text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+    clip-path: var(--slice-0);
+  }
+  
+  .button-49:hover:after {
+    animation: 1s glitch;
+    animation-timing-function: steps(2, end);
+  }
+  
+  @keyframes glitch {
+    0% {
+      clip-path: var(--slice-1);
+      transform: translate(-20px, -10px);
+    }
+    10% {
+      clip-path: var(--slice-3);
+      transform: translate(10px, 10px);
+    }
+    20% {
+      clip-path: var(--slice-1);
+      transform: translate(-10px, 10px);
+    }
+    30% {
+      clip-path: var(--slice-3);
+      transform: translate(0px, 5px);
+    }
+    40% {
+      clip-path: var(--slice-2);
+      transform: translate(-5px, 0px);
+    }
+    50% {
+      clip-path: var(--slice-3);
+      transform: translate(5px, 0px);
+    }
+    60% {
+      clip-path: var(--slice-4);
+      transform: translate(5px, 10px);
+    }
+    70% {
+      clip-path: var(--slice-2);
+      transform: translate(-10px, 10px);
+    }
+    80% {
+      clip-path: var(--slice-5);
+      transform: translate(20px, -10px);
+    }
+    90% {
+      clip-path: var(--slice-1);
+      transform: translate(-10px, 0px);
+    }
+    100% {
+      clip-path: var(--slice-1);
+      transform: translate(0);
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .button-49,
+    .button-49:after {
+      width: 200px;
+      height: 86px;
+      line-height: 88px;
+    }
+  }
+  

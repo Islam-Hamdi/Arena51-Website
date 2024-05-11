@@ -1,0 +1,83 @@
+/* carousel.css */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.slider-arrow-next {
+  position: absolute;
+  top: 45%;
+  right: 0;
+  z-index: 999;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.517);
+  padding: 10px;
+  transition: all 0.2s ease-linear;
+}
+.slider-arrow-prev {
+  position: absolute;
+  top: 45%;
+  z-index: 999;
+  width: 30px;
+  height: 30px;
+  background-color: rgba(0, 0, 0, 0.517);
+  padding: 10px;
+  transition: all 0.2s ease-linear;
+}
+
+.slider-arrow-prev:hover {
+  transition-duration: 300ms;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  background-color: black;
+}
+.slider-arrow-next:hover {
+  transition-duration: 300ms;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  background-color: black;
+}
+
+.slider-arrow svg {
+  color: white;
+  transition: all 0.2s ease-linear;
+}
+
+.slider-arrow:hover svg {
+  color: white;
+}
+
+.slider-arrow.left.md\:block,
+.slider-arrow.right.md\:block {
+  display: none;
+}
+
+.slider-container {
+  position: relative;
+}
+
+.index {
+  opacity: 0;
+}
+.btnn {
+  appearance: none;
+  border: 1px solid white;
+  padding: 10px;
+  color: white;
+  background-color: transparent;
+}
+
+.course-card .image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.course-card .course-details ul {
+  list-style: disc;
+  margin-left: 9px;
+}
+
+.course-card .course-details ul li {
+  color: #777;
+}

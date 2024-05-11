@@ -1,0 +1,48 @@
+// Prisma schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider  = "postgresql"
+    url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
+    directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
+
+model User {
+    userId      String  @id @default(cuid())
+    username    String
+    email       String?
+    phoneNumber String?
+    password    String
+    userType    String  @default("Customer")
+    balance     Float   @default(0.00)
+    games       Game[]
+}
+
+model Game {
+    gameId      String  @id @default(cuid())
+    name        String
+    image       String
+    description String?
+    price       Float
+    quantity    Int
+
+    seller     User?   @relation(fields: [sellerId], references: [userId], onDelete: Cascade, onUpdate: Cascade)
+    categories String // Updated to be a single string with a delimiter
+    sellerId   String?
+}
+
+model Purchases {
+    purchaseId   String   @id @default(cuid())
+    gameId       String
+    phone        String
+    address      String
+    zipcode      String
+    itemname     String
+    price        Int
+    quantity     Int
+    purchaserId  String
+    purchaseDate DateTime @default(now())
+}

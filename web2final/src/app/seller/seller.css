@@ -1,0 +1,264 @@
+/* Reset CSS */
+/* Reset CSS */
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Lato:wght@300&display=swap');
+
+* {
+    /* font-family: Phantomsans, sans-serif; */
+    font-style: bold;
+}
+
+
+/* Category dropdown styles */
+select#category {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-family: Phantomsans, sans-serif;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-weight: 200;
+    border-radius: 5px;
+}
+
+select#category:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+/* Style dropdown arrow */
+select#category::-ms-expand {
+    display: none;
+}
+
+/* Custom dropdown arrow */
+select#category::after {
+    content: "\25BC";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+/* Style for when dropdown is open */
+select#category option:checked {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+/* Style for dropdown options */
+select#category option {
+    background-color: rgba(0, 0, 0, 0.5); /* Darker blue background color */
+    color:  #fff;
+    padding: 10px; /* Add padding to improve visibility */
+}
+
+/* Style for dropdown options on hover */
+select#category option:hover {
+    background-color: #68C301; /* Light green background color */
+    color: #fff; /* White text color */
+}
+
+
+
+.form-group .btn{
+    padding: 10px 40px;
+    background: #68C301;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    border: 0;
+    text-shadow: 0 1px 2px #000000;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.form-group .btn:hover {
+    background-color: #1B3D00;
+}
+
+
+.spcailnav{
+   
+   padding: 5px ;
+    background-color:#68C301;
+    color: #1B3D00;
+}
+.spcailnav:hover {
+    color: #ffffff;
+}
+
+
+
+/* Header styles */
+/* header {
+    background-color: #07090A;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-family: Phantomsans, sans-serif;
+    font-weight: 200;
+    margin: 20px auto;
+    
+} */
+
+
+
+/* Main content styles */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+form {
+    width: 45%;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 900;
+    font-family: sans-serif;
+    display: block;
+    margin-bottom: 5px;
+
+    text-shadow: 0 1px 2px #000000;
+   
+    font-style: bold;
+    
+   
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    font-family: Phantomsans, sans-serif;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    font-weight: 200;
+    border-radius: 5px;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="file"]:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+
+.file-area {
+    position: relative;
+    width: 100%;
+}
+
+.file-area input[type=file] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-area .file-dummy {
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.file-area .file-dummy .success {
+    display: none;
+}
+
+.file-area:hover .file-dummy {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.file-area input[type=file]:focus + .file-dummy {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.file-area input[type=file]:valid + .file-dummy {
+    border-color: rgba(0, 255, 0, 0.4);
+    background-color: rgba(0, 255, 0, 0.3);
+}
+
+.file-area input[type=file]:valid + .file-dummy .success {
+    display: inline-block;
+}
+
+.file-area input[type=file]:valid + .file-dummy .default {
+    display: none;
+}
+
+/* Preview container styles */
+.preview-container {
+    width: 45%;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.preview-container img {
+    width: 100%;
+    display: block;
+}
+
+
+/* Responsive styles for mobile screens */
+@media only screen and (max-width: 600px) {
+    main {
+        flex-direction: column; /* Stack form and preview vertically */
+        align-items: center; /* Center content horizontally */
+    }
+
+    form,
+    .preview-container {
+        width: 100%; /* Make form and preview container full width */
+    }
+
+    /* Adjust margin for better spacing */
+    .form-group,
+    label {
+        margin-bottom: 10px;
+    }
+
+    /* Adjust padding for better spacing */
+    input[type="text"],
+    input[type="number"],
+    input[type="file"] {
+        padding: 8px;
+    }
+
+    /* Increase font size for better readability */
+    label {
+        font-size: 14px;
+    }
+
+    /* Make image preview appear under the form elements */
+    .preview-container {
+        margin-top: 10px;
+    }
+}
