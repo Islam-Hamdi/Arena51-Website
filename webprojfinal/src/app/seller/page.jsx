@@ -1,24 +1,20 @@
-"use client";
-import "./seller.css";
+"use client"
+import "./seller.css"
 import React, { useState } from 'react';
 import { useUser } from "../context/UserContext";
-import { CldImage, CldUploadButton } from "next-cloudinary";
 import { useRouter } from "next/navigation";
 
 const Seller = () => {
     const user = useUser();
     const router = useRouter();
-    const uploadPreset = "upjczixd";
-    const cloud_name = "dk622nlua";
-    const [imageId, setImageId] = useState("");
+
     const [gameData, setGameData] = useState({
-        title: "",
-        caption: "",
-        category: "RPG",
+        title: '',
+        caption: '',
+        category: 'RPG',
         price: 0,
         quantity: 0,
-        sellerId: "", // Added sellerId field
-        image: null,
+        imageUrl: '', // Updated state for image URL
     });
 
     const handleInputChange = (e) => {
@@ -38,7 +34,7 @@ const Seller = () => {
                 quantity: gameData.quantity,
                 sellerId: gameData.sellerId, // Include sellerId in payload
                 user: user.user,
-                image: `https://res.cloudinary.com/${cloud_name}/image/upload/${imageId}`,
+                image: gameData.imageUrl // Use the provided image URL
             };
 
             const response = await fetch("api/newGame", {
@@ -141,28 +137,9 @@ const Seller = () => {
                         required
                     />
                 </div>
-                <div className="form-group file-area">
-                    <label htmlFor="image">Image</label>
-                    <div className="form-group">
-                        <CldUploadButton
-                            onUpload={(result) => {
-                                setImageId(result.info.public_id);
-                            }}
-                            uploadPreset={uploadPreset}
-                        />
-                        {imageId && (
-                            <CldImage
-                                width="968"
-                                height="600"
-                                src={`${imageId}`}
-                                sizes="100vw"
-                                alt="Description"
-                            />
-                        )}
-                    </div>
-                    <div className="file-dummy">
-                        {gameData.image && <div className="success">Image uploaded</div>}
-                    </div>
+                <div className="form-group">
+                    <label htmlFor="imageUrl">Image URL</label>
+                    <input type="url" name="imageUrl" id="imageUrl" className="form-control" value={gameData.imageUrl} onChange={handleInputChange} required />
                 </div>
                 <div className="form-group">
                     <button className="btn" type="submit">
@@ -170,15 +147,7 @@ const Seller = () => {
                     </button>
                 </div>
             </form>
-            {gameData.image && (
-                <div className="preview-container">
-                    <img
-                        src={`https://res.cloudinary.com/${cloud_name}/image/upload/${imageId}`}
-                        id="image-preview"
-                        alt="Uploaded Image"
-                    />
-                </div>
-            )}
+
         </main>
     );
 };

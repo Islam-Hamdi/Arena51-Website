@@ -140,7 +140,8 @@ label {
 
 .form-group input[type="text"],
 .form-group input[type="number"],
-.form-group input[type="file"] {
+.form-group input[type="file"],
+.form-group input[type="url"] {
     width: 100%;
     padding: 10px;
     font-size: 16px;
