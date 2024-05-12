@@ -7,6 +7,18 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useUser } from '@/app/context/UserContext';
+const flashContainer = document.getElementById("flash-container");//like error msgs
+
+function showFlashMessage(message, status) {
+    flashContainer.textContent = message;
+    flashContainer.style.display = "block";
+    if (status === true) flashContainer.style.backgroundColor = "green";
+    else flashContainer.style.backgroundColor = "#f44336";
+
+    setTimeout(function () {
+        flashContainer.style.display = "none";
+    }, 3000); // Hide after 3 seconds
+}
 
 const Hero = () => {
   const [games, setGames] = useState([]);
@@ -41,10 +53,10 @@ const Hero = () => {
   const filteredGames = activeCategory === "All" ? games : games.filter(game => game.categories === activeCategory);
 
   const handleBuyNow = (gameId, price) => {
-    if (user && user.user.balance >= price) {
+    if (user && user.user && user.user.balance >= price) {
       router.push(`/purchase/${gameId}`);
     } else {
-      alert("User is not logged in or account balance is low. Please recharge.");
+      showFlashMessage("User is not logged in or account balance is low. Please recharge.");
     }
   };
 

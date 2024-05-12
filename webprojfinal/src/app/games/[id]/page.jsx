@@ -8,9 +8,6 @@ import prisma from "@/app/libs/prisma";
 const GameDetails = async ({ params }) => {
   const { id } = params;
 
-  // Testing
-  console.log(id, "🔴🔴🔴");
-
   const gameDetails = await prisma.game.findUnique({ where: { gameId: id } });
 
   if (!gameDetails) {
@@ -57,10 +54,10 @@ const GameDetails = async ({ params }) => {
           <p>{gameDetails.description}</p>
           <p>Price: ${gameDetails.price}</p>
           <p>Quantity Available: {gameDetails.quantity}</p>
-          <button href={`/purchase/${gameDetails.gameId}`} id="buynow">
-            Buy Now
-          </button>
-        </div>
+          <Link href={`/purchase/${gameDetails.gameId}`} passHref>
+            <button className="btn fill">Buy Now</button>
+          </Link>        
+      </div>
       </div>
       <h3 className="heading">{`Other Games`}</h3>
       <p
@@ -89,7 +86,9 @@ const GameDetails = async ({ params }) => {
               <Link href={`/games/${e.gameId}`} passHref style={{ marginRight: "10px" }}>
                 <button className='btn outline'>Details</button>
               </Link>
-              <button href={`/purchase/${gameDetails.gameId}`} className="btn fill">Buy Now</button>
+              <Link href={`/purchase/${gameDetails.gameId}`} passHref>
+                <button className="btn fill">Buy Now</button>
+              </Link>
             </div>
           </div>
         ))}

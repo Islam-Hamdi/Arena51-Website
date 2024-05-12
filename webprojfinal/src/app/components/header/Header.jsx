@@ -15,7 +15,6 @@ const Header = () => {
     const router = useRouter();
 
 
-
     const [showSignInModal, setShowSignInModal] = useState(false);
     const [showSignUpModal, setShowSignUpModal] = useState(false);
     const [signInUsername, setSignInUsername] = useState("");
@@ -26,10 +25,7 @@ const Header = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [username, setUsername] = useState("");
     const [isNavigated, setIsNavigated] = useState(false);
-
-
-
-    const flashContainer = document.getElementById("flash-container");
+    const flashContainer = document.getElementById("flash-container");//like error msgs
 
     function showFlashMessage(message, status) {
         flashContainer.textContent = message;
@@ -105,12 +101,10 @@ const Header = () => {
 
             } else {
                 console.error("Incorrect username or password");
-                // You might want to display an error message to the user here
+                showFlashMessage("SignIn Unsuccessful", false);
             }
         } catch (error) {
             showFlashMessage("SignIn Error", false);
-
-            // You might want to display an error message to the user here
         }
     };
 
@@ -132,7 +126,7 @@ const Header = () => {
 
         } catch (error) {
             console.error("An error occurred:", error);
-            showFlashMessage("Already User", false);
+            showFlashMessage("SignUp Unsuccessful", false);
         }
     };
 
@@ -146,8 +140,6 @@ const Header = () => {
         setUser(null);
         router.push("/");
     };
-
-    console.log(user, "👇🟢");
 
     return (
         <div>
