@@ -39,11 +39,22 @@ The platform supports **Customers, Sellers, and Admins**, allowing users to buy/
 ## 📊 Admin Statistics Dashboard  
 
 1. **Area Chart** – Average game price per category.  
+   ![](arena51_images/admin-stats-areachart.png)  
+
 2. **Bar Chart** – Number of purchases per month.  
+   ![](arena51_images/admin-stats-barchart.png)  
+
 3. **Donut/Pie Chart** – % of free vs paid games.  
+   ![](arena51_images/admin-stats-piechart.png)  
+
 4. **Radar Chart** – % of games by category.  
+   ![](arena51_images/admin-stats-radarchart.png)  
+
 5. **Line Chart** – Price of each game.  
+   ![](arena51_images/admin-stats-linechart-price.png)  
+
 6. **Line Chart** – Number of games per category.  
+   ![](arena51_images/admin-stats-linechart-category.png)  
 
 📎 *All charts support export (SVG, PNG, CSV) and zooming for clarity.*  
 
@@ -58,7 +69,8 @@ Main entities:
 - **Game** (`gameId, sellerId, title, price, categories`)  
 - **Purchases** (`purchaseId, purchaserId, gameId, date`)  
 
-📷 *See `/assets/datamodel.png` for the diagram.*  
+📷 Data Model Diagram:  
+![](arena51_images/datamodel.png)  
 
 ---
 
@@ -105,11 +117,14 @@ DELETE FROM Purchases WHERE purchaseId = 'purchase_id';
 
 ## 📷 Screenshots  
 
-- ✅ Customer login & purchase flow.  
-- ✅ Seller adding games.  
-- ✅ Admin dashboard with interactive charts.  
+### Customer Flow  
+- Login and purchase flow  
+![](arena51_images/customer-login.png)  
+![](arena51_images/customer-purchase.png)  
 
-*(Screenshots available in `/assets/screenshots/`)*  
+### Seller Flow  
+- Add new game to the platform  
+![](arena51_images/seller-add-game.png)  
 
 ---
 
@@ -122,9 +137,11 @@ DELETE FROM Purchases WHERE purchaseId = 'purchase_id';
 ---
 
 ## 👥 Contributions  
+
 - **Islam Hamdi**: UI design, Database model, queries, backend API integration.  
 - **Rain Al-Kai**: Seller functionality, statistics dashboard, documentation. 
 - **Najlaa Al-Sahel**: customer features, testing.  
+
 ---
 
 ## 📜 License  
