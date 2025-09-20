@@ -1,4 +1,7 @@
 # 🎮 Arena 51 - Gaming E-commerce Website  
+<p align="center">
+   <img width="512" height="512" alt="logo" src="https://github.com/user-attachments/assets/84a2e3b1-85c7-4db5-8706-7ae7361bf3a9" />
+</p>
 
 A full-stack gaming e-commerce platform built as a university project for **Web Project - Phase 2**.  
 The platform supports **Customers, Sellers, and Admins**, allowing users to buy/sell games and providing rich statistics for admins.  
@@ -38,23 +41,7 @@ The platform supports **Customers, Sellers, and Admins**, allowing users to buy/
 
 ## 📊 Admin Statistics Dashboard  
 
-1. **Area Chart** – Average game price per category.  
-   ![](arena51_images/admin-stats-areachart.png)  
-
-2. **Bar Chart** – Number of purchases per month.  
-   ![](arena51_images/admin-stats-barchart.png)  
-
-3. **Donut/Pie Chart** – % of free vs paid games.  
-   ![](arena51_images/admin-stats-piechart.png)  
-
-4. **Radar Chart** – % of games by category.  
-   ![](arena51_images/admin-stats-radarchart.png)  
-
-5. **Line Chart** – Price of each game.  
-   ![](arena51_images/admin-stats-linechart-price.png)  
-
-6. **Line Chart** – Number of games per category.  
-   ![](arena51_images/admin-stats-linechart-category.png)  
+   ![](arena51_images/image24.png)  
 
 📎 *All charts support export (SVG, PNG, CSV) and zooming for clarity.*  
 
@@ -70,7 +57,7 @@ Main entities:
 - **Purchases** (`purchaseId, purchaserId, gameId, date`)  
 
 📷 Data Model Diagram:  
-![](arena51_images/datamodel.png)  
+![](arena51_images/image13.png)  
 
 ---
 
@@ -119,12 +106,14 @@ DELETE FROM Purchases WHERE purchaseId = 'purchase_id';
 
 ### Customer Flow  
 - Login and purchase flow  
-![](arena51_images/customer-login.png)  
-![](arena51_images/customer-purchase.png)  
+![](arena51_images/image17.png)  
+![](arena51_images/image20.png)
+![](arena51_images/image18.png)  
+  
 
 ### Seller Flow  
 - Add new game to the platform  
-![](arena51_images/seller-add-game.png)  
+![](arena51_images/image22.png)  
 
 ---
 
